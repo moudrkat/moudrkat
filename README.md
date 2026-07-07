@@ -29,18 +29,30 @@ I approach AI like a physicist: observe carefully, build experiments, question a
 
 ## 🚀 Featured Projects
 
-<a href="https://github.com/moudrkat/brainscope">
-  <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=moudrkat&repo=brainscope&theme=github_dark" />
-</a>
+### 🧠 [Brainscope](https://github.com/moudrkat/brainscope)
 
-<a href="https://github.com/moudrkat/hidden-directions">
-  <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=moudrkat&repo=hidden-directions&theme=github_dark" />
-</a>
+Watch language models think in real time. An OpenAI-compatible server that streams live transformer activations while generating text.
 
-<a href="https://github.com/moudrkat/sixteen-voices">
-  <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=moudrkat&repo=sixteen-voices&theme=github_dark" />
-</a>
+---
 
-<a href="https://github.com/moudrkat/jepa-demo">
-  <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=moudrkat&repo=jepa-demo&theme=github_dark" />
-</a>
+### 🧭 [Hidden Directions](https://github.com/moudrkat/hidden-directions)
+
+A toolkit for injecting and detecting hidden behavioral directions inside transformer models.
+
+---
+
+### 🎭 [Sixteen Voices](https://github.com/moudrkat/sixteen-voices)
+
+An interpretability study exploring how tiny transformers encode writing style with LoRA adapters and attention heads.
+
+---
+
+### 👁️ [JEPA Demo](https://github.com/moudrkat/jepa-demo)
+
+Interactive demos explaining Meta's I-JEPA and V-JEPA models through visualizations and experiments.
+
+---
+
+### 🔬 [Show Me Your Attention](https://github.com/moudrkat/show-me-your-attention)
+
+Visualize attention maps and neuron activations to understand how transformer models process prompts.
