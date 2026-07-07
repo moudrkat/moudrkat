@@ -1,25 +1,46 @@
-# Hey, I'm Katka 👋
+# Hey, I'm Kate 👋
 
-AI Engineer | Former Particle Physicist ⚛️ | Former Risk Modeler 📈
+**AI Engineer** • Former Particle Physicist ⚛️ • Former Risk Modeler 📈
 
-I build AI that people can actually understand.
+I build tools that make neural networks less mysterious.
 
-I'm obsessed with model interpretability, explainability, and making neural networks less of a black box. My favorite projects are visualizations that let you peek inside deep learning models—especially LLMs—and see what they're *actually* thinking.
+My work sits at the intersection of **mechanistic interpretability**, **model visualization**, and **explainable AI**. I'm fascinated by what happens inside modern language and vision models—and I enjoy turning those hidden processes into interactive experiments that anyone can explore.
 
-I'm the creator of **brainscope**, an OpenAI-compatible server that streams live visualizations of a model's inner workings while it's generating text. Because I believe interpretability shouldn't stay in research papers—it belongs in production.
+Most of my projects aren't AI applications; they're ways to **look inside AI**.
 
-I'm a strong believer in:
-- 🧠 Local-first AI
-- 🔍 Transparent and interpretable models
-- ⚡ Practical ML over hype
-- 🚀 Open source
-- 🔬 Scientific thinking applied to AI
+I'm the creator of **Brainscope**, an OpenAI-compatible inference server that streams live visualizations of transformer activations as a model generates text. I've also built projects exploring hidden directions in transformer weights, attention visualization, LoRA interpretability, and self-supervised vision models like JEPA.
 
-Currently exploring:
-- LLM interpretability
-- Activation visualization
-- Mechanistic understanding of neural networks
-- Production AI tooling
-- Generative models
+### What I care about
 
-Scientist by training. Futurist by heart.
+* 🧠 Mechanistic interpretability
+* 🔍 Understanding *why* models behave the way they do
+* 📊 Interactive visualizations of neural networks
+* ⚡ Practical, local-first AI
+* 🚀 Open-source tools that make AI more transparent
+
+### Currently exploring
+
+* Transformer circuits and representation learning
+* Activation steering and hidden directions
+* Explainable AI for LLMs and vision models
+* Production tooling for interpretable AI systems
+
+I approach AI like a physicist: observe carefully, build experiments, question assumptions, and make complex systems understandable.
+
+## 🚀 Featured Projects
+
+<a href="https://github.com/moudrkat/brainscope">
+  <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=moudrkat&repo=brainscope&theme=github_dark" />
+</a>
+
+<a href="https://github.com/moudrkat/hidden-directions">
+  <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=moudrkat&repo=hidden-directions&theme=github_dark" />
+</a>
+
+<a href="https://github.com/moudrkat/sixteen-voices">
+  <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=moudrkat&repo=sixteen-voices&theme=github_dark" />
+</a>
+
+<a href="https://github.com/moudrkat/jepa-demo">
+  <img align="center" src="https://github-readme-stats.vercel.app/api/pin/?username=moudrkat&repo=jepa-demo&theme=github_dark" />
+</a>
