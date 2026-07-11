@@ -42,6 +42,12 @@ Watch language models think in real time. An OpenAI-compatible server that strea
 
 ---
 
+### 🕹️ [Steeropathy](https://github.com/moudrkat/steeropathy)
+
+Agents steering agents. One agent's mood is read off its activations and handed to another as a raw vector, no text in between. And in "the offer" mode, the receiver consents to a vector it cannot read.
+
+---
+
 ### 🧭 [Hidden Directions](https://github.com/moudrkat/hidden-directions)
 
 A toolkit for injecting and detecting hidden behavioral directions inside transformer models.
