@@ -28,6 +28,12 @@ I'm the creator of **Brainscope**, an OpenAI-compatible inference server that st
 
 I approach AI like a physicist: observe carefully, build experiments, question assumptions, and make complex systems understandable.
 
+## 💥 Come say hi in my collision chamber
+
+My personal site is a chat with a tiny LLM running entirely in your browser, and every answer it generates renders as a real particle collision. Click the event below to fire your own question into the chamber:
+
+[![One question fired into the chamber: the model answers while its layers, attention heads and logit-lens flips render as a real collision.](media/detektor.gif)](https://unt1l1f1nd-detektor.static.hf.space)
+
 ## 🚀 Featured Projects
 
 ### 🧠 [Brainscope](https://github.com/moudrkat/brainscope)
