@@ -51,13 +51,3 @@ A toolkit for injecting and detecting hidden behavioral directions inside transf
 An interpretability study exploring how tiny transformers encode writing style with LoRA adapters and attention heads.
 
 ---
-
-### 👁️ [JEPA Demo](https://github.com/moudrkat/jepa-demo)
-
-Interactive demos explaining Meta's I-JEPA and V-JEPA models through visualizations and experiments.
-
----
-
-### 🔬 [Show Me Your Attention](https://github.com/moudrkat/show-me-your-attention)
-
-Visualize attention maps and neuron activations to understand how transformer models process prompts.
