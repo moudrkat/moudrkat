@@ -20,14 +20,6 @@ I'm the creator of **Brainscope**, an OpenAI-compatible inference server that st
 * ⚡ Practical, local-first AI
 * 🚀 Open-source tools that make AI more transparent
 
-### Currently exploring
-
-* Transformer circuits and representation learning
-* Activation steering and hidden directions
-* Production tooling for interpretable AI systems
-
-I approach AI like a physicist: observe carefully, build experiments, question assumptions, and make complex systems understandable.
-
 ## 💥 Come say hi in my collision chamber
 
 My personal site is a chat with a tiny LLM running entirely in your browser, and every answer it generates renders as a real particle collision. Click the event below to fire your own question into the chamber:
