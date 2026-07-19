@@ -6,11 +6,9 @@ I build tools that make neural networks less mysterious.
 
 Because I believe interpretability shouldn't stay in research papers—it belongs in production.
 
-My work sits at the intersection of **mechanistic interpretability**, **model visualization**, and **explainable AI**. I'm fascinated by what happens inside modern language and vision models—and I enjoy turning those hidden processes into interactive experiments that anyone can explore.
+My work sits at the intersection of **mechanistic interpretability**, **model visualization**, and **explainable AI**. I'm fascinated by what happens inside modern language and vision models—and I enjoy turning those hidden processes into interactive experiments that anyone can explore. Most of my projects are ways to **look inside AI** — the map of how they fit together is below.
 
-Most of my projects are ways to **look inside AI**.
-
-I'm the creator of **Brainscope**, an OpenAI-compatible inference server that streams live visualizations of transformer activations as a model generates text. I've also built projects exploring hidden directions in transformer weights, attention visualization, LoRA interpretability, and self-supervised vision models like JEPA.
+The house rules, in every repo: each experiment ships with a **placebo control**, its **negative results stay published**, and when a finding turns out to be about my own instrument instead of the model, that page says so. Half the fun is the honest notes.
 
 ### What I care about
 
@@ -34,7 +32,7 @@ My personal site is a chat with a tiny LLM running entirely in your browser, and
 flowchart TD
     hd["🧭 <b>hidden-directions</b><br/>turn a behavior into a vector —<br/>inject it, bake it into the weights,<br/>or catch a bake"]
     bs(["🧠 <b>brainscope</b><br/>watch a model think: an OpenAI-compatible server<br/>with a live view into the residual stream<br/>— logit lens · attention · J-lens · live steering"])
-    st["🕹️ <b>steeropathy</b><br/>agents that talk through activations, not text —<br/>a feeling read off one mind, pushed into another"]
+    st["🕹️ <b>steeropathy</b><br/>agents that talk through activations<br/>and J-space, never text — moods, concepts,<br/>a zombie outbreak fought by mind-reading"]
     tm["⚖️ <b>in-two-minds</b><br/>catch an agent hesitating between two tools,<br/>in its activations before it commits"]
 
     hd -->|"directions &<br/>baked personas"| bs
