@@ -2,21 +2,32 @@
 
 **AI Engineer** • Former Particle Physicist ⚛️ • Former Risk Modeler 📈
 
-I build tools that make neural networks less mysterious.
+I've spent my whole career looking inside systems that would rather stay
+opaque — first particle collisions, then risk models, now neural networks.
 
-Because I believe interpretability shouldn't stay in research papers—it belongs in production.
+> The models talk to us all day. **I want to be able to affect them back.**
 
-My work sits at the intersection of **mechanistic interpretability**, **model visualization**, and **explainable AI**. I'm fascinated by what happens inside modern language and vision models—and I enjoy turning those hidden processes into interactive experiments that anyone can explore. Most of my projects are ways to **look inside AI** — the map of how they fit together is below.
+So I build tools that make neural networks less mysterious — because
+interpretability shouldn't stay in research papers, it belongs in
+production. (And in zombie games. And in mushroom generators. You'll see.)
 
-The house rules, in every repo: each experiment ships with a **placebo control**, its **negative results stay published**, and when a finding turns out to be about my own instrument instead of the model, that page says so. Half the fun is the honest notes.
+The house rules, in every repo: each experiment ships with a **placebo
+control**, its **negative results stay published**, and when a finding
+turns out to be about my own instrument instead of the model, that page
+says so. Half the fun is the honest notes.
 
-### What I care about
+### Naming things is 10% of the work and 90% of the joy
 
-* 🧠 Mechanistic interpretability
-* 🔍 Understanding *why* models behave the way they do
-* 📊 Interactive visualizations of neural networks
-* ⚡ Practical, local-first AI
-* 🚀 Open-source tools that make AI more transparent
+[`the-paper-that-remembers-itself`](https://github.com/moudrkat/paper-remembers) ·
+[`steeropathy`](https://github.com/moudrkat/steeropathy) ·
+[`multi-shroomed-bandit`](https://multi-shroomed-bandit.streamlit.app) ·
+[`once-upon-256-dim`](https://once-upon-256-dim.streamlit.app) ·
+[`sample-me-softly-with-this-prompt`](https://sample-me-softly-with-this-prompt.streamlit.app) ·
+[`the-shroomifier`](https://shroomrier.streamlit.app) ·
+[`attack-on-applepear`](https://attack-on-applepear.streamlit.app)
+
+(Every one of those is a real, running project. I trained several of them
+on my laptop CPU, because why not.)
 
 ## 💥 Come say hi in my collision chamber
 
@@ -76,3 +87,5 @@ Smaller, self-contained ways to look inside:
 - 🧮 [least-squares-method](https://github.com/moudrkat/least-squares-method) — code archaeology: a printed Pascal listing, photographed page by page and revived on Turbo Pascal 5.5
 
 ---
+
+None of it is perfect. *That's kind of delightful.*
