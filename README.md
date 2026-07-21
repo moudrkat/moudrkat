@@ -11,31 +11,13 @@ So I build tools that make neural networks less mysterious — because
 interpretability shouldn't stay in research papers, it belongs in
 production. (And in zombie games. And in mushroom generators. You'll see.)
 
-The house rules, in every repo: each experiment ships with a **placebo
-control**, its **negative results stay published**, and when a finding
-turns out to be about my own instrument instead of the model, that page
-says so. Half the fun is the honest notes.
-
-### Naming things is 10% of the work and 90% of the joy
-
-[`the-paper-that-remembers-itself`](https://github.com/moudrkat/paper-remembers) ·
-[`steeropathy`](https://github.com/moudrkat/steeropathy) ·
-[`multi-shroomed-bandit`](https://multi-shroomed-bandit.streamlit.app) ·
-[`once-upon-256-dim`](https://once-upon-256-dim.streamlit.app) ·
-[`sample-me-softly-with-this-prompt`](https://sample-me-softly-with-this-prompt.streamlit.app) ·
-[`the-shroomifier`](https://shroomrier.streamlit.app) ·
-[`attack-on-applepear`](https://attack-on-applepear.streamlit.app)
-
-(Every one of those is a real, running project. I trained several of them
-on my laptop CPU, because why not.)
-
 ## 💥 Come say hi in my collision chamber
 
 My personal site is a chat with a tiny LLM running entirely in your browser, and every answer it generates renders as a real particle collision. Click the event below to fire your own question into the chamber:
 
 [![One question fired into the chamber: the model answers while its layers, attention heads and logit-lens flips render as a real collision.](media/detektor.gif)](https://unt1l1f1nd-detektor.static.hf.space)
 
-## 🚀 How my projects fit together
+## 🚀 My main project is an opensource model interpretability lab - I develop it here and experiment with it on a real production app
 
 > One engine for looking inside a model, one factory for the directions it steers with, and the experiments that run on both. **Click any box to open its repo.**
 
@@ -71,7 +53,6 @@ flowchart TD
 Smaller, self-contained ways to look inside:
 
 - 📜 [paper-remembers](https://github.com/moudrkat/paper-remembers) — Hopfield's 1982 paper, running live: rub out any part of the page and watch it rebuild itself
-- 🎬 [green-room](https://github.com/moudrkat/green-room) — a multi-character agent has already cast the scene before it writes a word of dialogue; see it in the activations, then recast it
 - 🎭 [sixteen-voices](https://github.com/moudrkat/sixteen-voices) — how a tiny transformer encodes writing style, through LoRA adapters and attention heads
 - 👁️ [show-me-your-attention](https://github.com/moudrkat/show-me-your-attention) — attention maps and neuron activations over your own prompt
 - 💥 [detektor](https://github.com/moudrkat/detektor) — the collision chamber above, open source (SmolLM2 in your browser, no server)
@@ -82,7 +63,7 @@ Smaller, self-contained ways to look inside:
 
 ### 🃏 And off the bench
 
-- 🎨 [personal-rembrandt](https://github.com/moudrkat/personal-rembrandt) — you can't build a personal brand, so build a personal Rembrandt: paste your bio, GPT-2 reads it in your browser, and its activations repaint his 1659 self-portrait — the brand-safe words sink into shadow. Teaches you very little about the model and a lot about Rembrandt
+- 🎨 [personal-rembrandt](https://github.com/moudrkat/personal-rembrandt) — you can't build a personal brand, so build a personal Rembrandt: paste your bio, GPT-2 reads it in your browser, and its activations repaint his 1659 self-portrait. 
 - 🛏️ [go-to-damn-bed](https://github.com/moudrkat/go-to-damn-bed) — a Claude Code skill that sends you to bed like a mom sends naughty children: it saves your work into TOMORROW.md, then counts to three. It never says what happens at three
 - 👑 [KingOfDiamonds](https://github.com/moudrkat/KingOfDiamonds) — the King of Diamonds game from *Alice in Borderland*, played by LLMs in character, recursive strategic thinking and all
 - 🗨️ [paralel-discordverse](https://github.com/moudrkat/paralel-discordverse) — your company's Discord gets a parallel universe, populated entirely by fictional colleagues
