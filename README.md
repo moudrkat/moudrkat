@@ -29,6 +29,7 @@ flowchart TD
     tm["⚖️ <b>in-two-minds</b><br/>agent hesitating between tools"]
     hw["🔥 <b>hotwire-vllm</b><br/>steering in production vLLM"]
     sm["🧪 <b>steering-mechanics</b><br/>how steering actually works"]
+    ht["📦 <b>heretic</b><br/><i>(external, p-e-w)</i><br/>automatic abliteration"]
 
     hd -->|"vectors"| bs
     bs -->|"hosts & captures"| st
@@ -38,6 +39,7 @@ flowchart TD
     bs <-.->|"same spec: lab ↔ prod"| hw
     bs -->|"causal replay"| sm
     hw -.->|"vector under study"| sm
+    ht -.->|"external direction source<br/>+ ablation to compare"| sm
 
     click hd "https://github.com/moudrkat/hidden-directions"
     click bs "https://github.com/moudrkat/brainscope"
@@ -45,18 +47,21 @@ flowchart TD
     click tm "https://github.com/moudrkat/in-two-minds"
     click hw "https://github.com/moudrkat/hotwire-vllm"
     click sm "https://github.com/moudrkat/steering-mechanics"
+    click ht "https://github.com/p-e-w/heretic"
 
     classDef engine fill:#1f6feb,stroke:#1158c7,color:#ffffff;
     classDef exp fill:#8957e5,stroke:#6e40c9,color:#ffffff;
+    classDef ext fill:#30363d,stroke:#8b949e,color:#c9d1d9,stroke-dasharray: 5 4;
     class bs,hd,hw engine;
     class st,tm,sm exp;
+    class ht ext;
 ```
 
 > [!NOTE]
 > **The blue boxes are the instrument.** [brainscope](https://github.com/moudrkat/brainscope) hosts any Hugging Face model and streams its internals to the browser; [hidden-directions](https://github.com/moudrkat/hidden-directions) makes the steering vectors — and bakes them into weights, then audits for the bake; [hotwire-vllm](https://github.com/moudrkat/hotwire-vllm) takes those vectors to production — steering inside vLLM's CUDA graphs, per request, steered speed = vanilla vLLM. All three speak one steering spec: a vector calibrated under the lens deploys unchanged, and a misbehaving production conversation replays back under the lens.
 
 > [!IMPORTANT]
-> **The purple boxes are experiments run under that lens.** [steeropathy](https://github.com/moudrkat/steeropathy) wires agents together through activations instead of text; [in-two-minds](https://github.com/moudrkat/in-two-minds) catches an agent hesitating between tools before it commits; [steering-mechanics](https://github.com/moudrkat/steering-mechanics) asks how steering vectors actually work inside the model — first findings: the dose has a threshold, and the suppression is entirely circuit-mediated.
+> **The purple boxes are experiments run under that lens.** [steeropathy](https://github.com/moudrkat/steeropathy) wires agents together through activations instead of text; [in-two-minds](https://github.com/moudrkat/in-two-minds) catches an agent hesitating between tools before it commits; [steering-mechanics](https://github.com/moudrkat/steering-mechanics) asks how steering vectors actually work inside the model — first findings: the dose has a threshold, and the suppression is entirely circuit-mediated. It also studies directions from external tools — the dashed box, [heretic](https://github.com/p-e-w/heretic) (automatic abliteration, Arditi et al. 2024), whose weight-level ablation is the mirror image of runtime steering.
 
 ---
 
