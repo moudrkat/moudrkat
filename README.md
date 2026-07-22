@@ -19,6 +19,9 @@ My personal site is a chat with a tiny LLM running entirely in your browser, and
 
 ## 🚀 My main project is an opensource model interpretability lab - I develop it here and experiment with it on a real production app
 
+> [!TIP]
+> **Don't read — just do it.** Every repo is `pip install`-able, most run on CPU or a free Colab GPU, and each has a demo that shows something real in ~2 minutes before you configure anything — `brainscope --model tiny` opens a browser view of a model thinking; `make demo` in steering-mechanics renders real measured figures with no GPU at all. Point your own OpenAI client at brainscope and watch your app's traffic. No account, no course — clone and look.
+
 > One engine for looking inside a model, one factory for the directions it steers with, and the experiments that run on both. **Click any box to open its repo.**
 
 ```mermaid
@@ -52,14 +55,9 @@ flowchart TD
     class st,tm,sm exp;
 ```
 
-> [!NOTE]
 > **The blue boxes are the instrument.** [brainscope](https://github.com/moudrkat/brainscope) hosts any Hugging Face model and streams its internals to the browser; [hidden-directions](https://github.com/moudrkat/hidden-directions) makes the steering vectors — and bakes them into weights, then audits for the bake; [hotwire-vllm](https://github.com/moudrkat/hotwire-vllm) takes those vectors to production — steering inside vLLM's CUDA graphs, per request, steered speed = vanilla vLLM. All three speak one steering spec: a vector calibrated under the lens deploys unchanged, and a misbehaving production conversation replays back under the lens.
 
-> [!IMPORTANT]
 > **The purple boxes are experiments run under that lens.** [steeropathy](https://github.com/moudrkat/steeropathy) wires agents together through activations instead of text; [in-two-minds](https://github.com/moudrkat/in-two-minds) catches an agent hesitating between tools before it commits; [steering-mechanics](https://github.com/moudrkat/steering-mechanics) asks how steering vectors actually work inside the model — first findings: the dose has a threshold, and the suppression is entirely circuit-mediated.
-
-> [!TIP]
-> **Meant to be picked up, not just admired.** Every repo is `pip install`-able, most run on CPU or a free Colab GPU, and each has a demo that shows something real in ~2 minutes before you configure anything — `brainscope --model tiny` opens a browser view of a model thinking; `make demo` in steering-mechanics renders real measured figures with no GPU at all. Point your own OpenAI client at brainscope and watch your app's traffic. No account, no course — clone and look.
 
 ---
 
