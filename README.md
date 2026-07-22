@@ -33,8 +33,8 @@ flowchart TD
     bs -->|"hosts the model,<br/>captures activations"| st
     bs -->|"hosts the model,<br/>captures activations"| tm
     st -.->|"steers with"| hd
-    hd -->|"vector catalog"| hw
-    bs -.->|"prototype in the lab,<br/>serve in production"| hw
+    hd -->|"vector catalog<br/>+ regime passport"| hw
+    bs <-.->|"same steering spec:<br/>calibrate & replay in the lab,<br/>serve in production"| hw
 
     click hd "https://github.com/moudrkat/hidden-directions"
     click bs "https://github.com/moudrkat/brainscope"
@@ -48,7 +48,7 @@ flowchart TD
     class st,tm exp;
 ```
 
-**The blue boxes are the instrument.** [brainscope](https://github.com/moudrkat/brainscope) hosts any Hugging Face model and streams its internals to the browser; [hidden-directions](https://github.com/moudrkat/hidden-directions) makes the steering vectors — and bakes them into weights, then audits for the bake; [hotwire-vllm](https://github.com/moudrkat/hotwire-vllm) takes those vectors to production — steering inside vLLM's CUDA graphs, per request, steered speed = vanilla vLLM. **The two purple boxes are experiments run under that lens.** [steeropathy](https://github.com/moudrkat/steeropathy) wires agents together through activations instead of text; [in-two-minds](https://github.com/moudrkat/in-two-minds) catches an agent hesitating between tools before it commits.
+**The blue boxes are the instrument.** [brainscope](https://github.com/moudrkat/brainscope) hosts any Hugging Face model and streams its internals to the browser; [hidden-directions](https://github.com/moudrkat/hidden-directions) makes the steering vectors — and bakes them into weights, then audits for the bake; [hotwire-vllm](https://github.com/moudrkat/hotwire-vllm) takes those vectors to production — steering inside vLLM's CUDA graphs, per request, steered speed = vanilla vLLM; it speaks the same steering spec as brainscope, so a vector calibrated under the lens deploys unchanged — and a misbehaving production conversation replays back under the lens. **The two purple boxes are experiments run under that lens.** [steeropathy](https://github.com/moudrkat/steeropathy) wires agents together through activations instead of text; [in-two-minds](https://github.com/moudrkat/in-two-minds) catches an agent hesitating between tools before it commits.
 
 ---
 
