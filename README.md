@@ -58,6 +58,9 @@ flowchart TD
 > [!IMPORTANT]
 > **The purple boxes are experiments run under that lens.** [steeropathy](https://github.com/moudrkat/steeropathy) wires agents together through activations instead of text; [in-two-minds](https://github.com/moudrkat/in-two-minds) catches an agent hesitating between tools before it commits; [steering-mechanics](https://github.com/moudrkat/steering-mechanics) asks how steering vectors actually work inside the model — first findings: the dose has a threshold, and the suppression is entirely circuit-mediated.
 
+> [!TIP]
+> **Meant to be picked up, not just admired.** Every repo is `pip install`-able, most run on CPU or a free Colab GPU, and each has a demo that shows something real in ~2 minutes before you configure anything — `brainscope --model tiny` opens a browser view of a model thinking; `make demo` in steering-mechanics renders real measured figures with no GPU at all. Point your own OpenAI client at brainscope and watch your app's traffic. No account, no course — clone and look.
+
 ---
 
 ### 🔬 Also on the bench
