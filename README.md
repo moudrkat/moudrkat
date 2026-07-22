@@ -24,7 +24,7 @@ My personal site is a chat with a tiny LLM running entirely in your browser, and
 
 > One engine for looking inside a model, one factory for the directions it steers with, and the experiments that run on both. **Click any box to open its repo.**
 
-(The lab currently runs one pre-registered question: **when does a steering vector generalize from calibration to deployment — and what do steering evals actually measure?** The plan, with hypotheses that can lose: [RESEARCH_PLAN.md](https://github.com/moudrkat/steering-mechanics/blob/main/RESEARCH_PLAN.md).)
+(The lab currently runs one pre-registered question: **when does a steering vector generalize from calibration to deployment — and what do steering evals actually measure?**)
 
 ```mermaid
 flowchart TD
