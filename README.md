@@ -28,6 +28,7 @@ flowchart TD
     st["🕹️ <b>steeropathy</b><br/>agents that talk through activations<br/>and J-space, never text — moods, concepts,<br/>a zombie outbreak fought by mind-reading"]
     tm["⚖️ <b>in-two-minds</b><br/>catch an agent hesitating between two tools,<br/>in its activations before it commits"]
     hw["🔥 <b>hotwire-vllm</b><br/>steering in production vLLM —<br/>baked into the CUDA graph,<br/>zero overhead, no fork"]
+    sm["🧪 <b>steering-mechanics</b><br/>how do steering vectors actually work —<br/>dose–response, direct-vs-circuit,<br/>attribution & patching"]
 
     hd -->|"directions &<br/>baked personas"| bs
     bs -->|"hosts the model,<br/>captures activations"| st
@@ -35,20 +36,23 @@ flowchart TD
     st -.->|"steers with"| hd
     hd -->|"vector catalog<br/>+ regime passport"| hw
     bs <-.->|"same steering spec:<br/>calibrate & replay in the lab,<br/>serve in production"| hw
+    bs -->|"causal replay,<br/>teacher-forced diffs"| sm
+    hw -.->|"its production vector<br/>under the microscope"| sm
 
     click hd "https://github.com/moudrkat/hidden-directions"
     click bs "https://github.com/moudrkat/brainscope"
     click st "https://github.com/moudrkat/steeropathy"
     click tm "https://github.com/moudrkat/in-two-minds"
     click hw "https://github.com/moudrkat/hotwire-vllm"
+    click sm "https://github.com/moudrkat/steering-mechanics"
 
     classDef engine fill:#1f6feb,stroke:#1158c7,color:#ffffff;
     classDef exp fill:#8957e5,stroke:#6e40c9,color:#ffffff;
     class bs,hd,hw engine;
-    class st,tm exp;
+    class st,tm,sm exp;
 ```
 
-**The blue boxes are the instrument.** [brainscope](https://github.com/moudrkat/brainscope) hosts any Hugging Face model and streams its internals to the browser; [hidden-directions](https://github.com/moudrkat/hidden-directions) makes the steering vectors — and bakes them into weights, then audits for the bake; [hotwire-vllm](https://github.com/moudrkat/hotwire-vllm) takes those vectors to production — steering inside vLLM's CUDA graphs, per request, steered speed = vanilla vLLM; it speaks the same steering spec as brainscope, so a vector calibrated under the lens deploys unchanged — and a misbehaving production conversation replays back under the lens. **The two purple boxes are experiments run under that lens.** [steeropathy](https://github.com/moudrkat/steeropathy) wires agents together through activations instead of text; [in-two-minds](https://github.com/moudrkat/in-two-minds) catches an agent hesitating between tools before it commits.
+**The blue boxes are the instrument.** [brainscope](https://github.com/moudrkat/brainscope) hosts any Hugging Face model and streams its internals to the browser; [hidden-directions](https://github.com/moudrkat/hidden-directions) makes the steering vectors — and bakes them into weights, then audits for the bake; [hotwire-vllm](https://github.com/moudrkat/hotwire-vllm) takes those vectors to production — steering inside vLLM's CUDA graphs, per request, steered speed = vanilla vLLM; it speaks the same steering spec as brainscope, so a vector calibrated under the lens deploys unchanged — and a misbehaving production conversation replays back under the lens. **The purple boxes are experiments run under that lens.** [steeropathy](https://github.com/moudrkat/steeropathy) wires agents together through activations instead of text; [in-two-minds](https://github.com/moudrkat/in-two-minds) catches an agent hesitating between tools before it commits; [steering-mechanics](https://github.com/moudrkat/steering-mechanics) asks how steering vectors actually work inside the model — first findings: the dose has a threshold, and the suppression is entirely circuit-mediated.
 
 ---
 
