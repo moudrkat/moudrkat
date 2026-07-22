@@ -24,9 +24,9 @@ My personal site is a chat with a tiny LLM running entirely in your browser, and
 ```mermaid
 flowchart TD
     hd["🧭 <b>hidden-directions</b><br/>behavior → vector"]
-    bs(["🧠 <b>brainscope</b><br/>watch a model think"])
+    bs(["🧠 <b>brainscope</b><br/>watch your app&#39;s model think"])
     st["🕹️ <b>steeropathy</b><br/>agents talking through activations"]
-    tm["⚖️ <b>in-two-minds</b><br/>hesitation, caught in the layers"]
+    tm["⚖️ <b>in-two-minds</b><br/>agent hesitating between tools"]
     hw["🔥 <b>hotwire-vllm</b><br/>steering in production vLLM"]
     sm["🧪 <b>steering-mechanics</b><br/>how steering actually works"]
 
