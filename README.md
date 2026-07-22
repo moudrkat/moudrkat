@@ -23,21 +23,21 @@ My personal site is a chat with a tiny LLM running entirely in your browser, and
 
 ```mermaid
 flowchart TD
-    hd["🧭 <b>hidden-directions</b><br/>turn a behavior into a vector —<br/>inject it, bake it into the weights,<br/>or catch a bake"]
-    bs(["🧠 <b>brainscope</b><br/>watch a model think: an OpenAI-compatible server<br/>with a live view into the residual stream<br/>— logit lens · attention · J-lens · live steering"])
-    st["🕹️ <b>steeropathy</b><br/>agents that talk through activations<br/>and J-space, never text — moods, concepts,<br/>a zombie outbreak fought by mind-reading"]
-    tm["⚖️ <b>in-two-minds</b><br/>catch an agent hesitating between two tools,<br/>in its activations before it commits"]
-    hw["🔥 <b>hotwire-vllm</b><br/>steering in production vLLM —<br/>baked into the CUDA graph,<br/>zero overhead, no fork"]
-    sm["🧪 <b>steering-mechanics</b><br/>how do steering vectors actually work —<br/>dose–response, direct-vs-circuit,<br/>attribution & patching"]
+    hd["🧭 <b>hidden-directions</b><br/>behavior → vector"]
+    bs(["🧠 <b>brainscope</b><br/>watch a model think"])
+    st["🕹️ <b>steeropathy</b><br/>agents talking through activations"]
+    tm["⚖️ <b>in-two-minds</b><br/>hesitation, caught in the layers"]
+    hw["🔥 <b>hotwire-vllm</b><br/>steering in production vLLM"]
+    sm["🧪 <b>steering-mechanics</b><br/>how steering actually works"]
 
-    hd -->|"directions &<br/>baked personas"| bs
-    bs -->|"hosts the model,<br/>captures activations"| st
-    bs -->|"hosts the model,<br/>captures activations"| tm
+    hd -->|"vectors"| bs
+    bs -->|"hosts & captures"| st
+    bs -->|"hosts & captures"| tm
     st -.->|"steers with"| hd
-    hd -->|"vector catalog<br/>+ regime passport"| hw
-    bs <-.->|"same steering spec:<br/>calibrate & replay in the lab,<br/>serve in production"| hw
-    bs -->|"causal replay,<br/>teacher-forced diffs"| sm
-    hw -.->|"its production vector<br/>under the microscope"| sm
+    hd -->|"vector + passport"| hw
+    bs <-.->|"same spec: lab ↔ prod"| hw
+    bs -->|"causal replay"| sm
+    hw -.->|"vector under study"| sm
 
     click hd "https://github.com/moudrkat/hidden-directions"
     click bs "https://github.com/moudrkat/brainscope"
