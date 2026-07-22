@@ -27,24 +27,28 @@ flowchart TD
     bs(["🧠 <b>brainscope</b><br/>watch a model think: an OpenAI-compatible server<br/>with a live view into the residual stream<br/>— logit lens · attention · J-lens · live steering"])
     st["🕹️ <b>steeropathy</b><br/>agents that talk through activations<br/>and J-space, never text — moods, concepts,<br/>a zombie outbreak fought by mind-reading"]
     tm["⚖️ <b>in-two-minds</b><br/>catch an agent hesitating between two tools,<br/>in its activations before it commits"]
+    hw["🔥 <b>hotwire-vllm</b><br/>steering in production vLLM —<br/>baked into the CUDA graph,<br/>zero overhead, no fork"]
 
     hd -->|"directions &<br/>baked personas"| bs
     bs -->|"hosts the model,<br/>captures activations"| st
     bs -->|"hosts the model,<br/>captures activations"| tm
     st -.->|"steers with"| hd
+    hd -->|"vector catalog"| hw
+    bs -.->|"prototype in the lab,<br/>serve in production"| hw
 
     click hd "https://github.com/moudrkat/hidden-directions"
     click bs "https://github.com/moudrkat/brainscope"
     click st "https://github.com/moudrkat/steeropathy"
     click tm "https://github.com/moudrkat/in-two-minds"
+    click hw "https://github.com/moudrkat/hotwire-vllm"
 
     classDef engine fill:#1f6feb,stroke:#1158c7,color:#ffffff;
     classDef exp fill:#8957e5,stroke:#6e40c9,color:#ffffff;
-    class bs,hd engine;
+    class bs,hd,hw engine;
     class st,tm exp;
 ```
 
-**The two blue boxes are the instrument.** [brainscope](https://github.com/moudrkat/brainscope) hosts any Hugging Face model and streams its internals to the browser; [hidden-directions](https://github.com/moudrkat/hidden-directions) makes the steering vectors — and bakes them into weights, then audits for the bake. **The two purple boxes are experiments run under that lens.** [steeropathy](https://github.com/moudrkat/steeropathy) wires agents together through activations instead of text; [in-two-minds](https://github.com/moudrkat/in-two-minds) catches an agent hesitating between tools before it commits.
+**The blue boxes are the instrument.** [brainscope](https://github.com/moudrkat/brainscope) hosts any Hugging Face model and streams its internals to the browser; [hidden-directions](https://github.com/moudrkat/hidden-directions) makes the steering vectors — and bakes them into weights, then audits for the bake; [hotwire-vllm](https://github.com/moudrkat/hotwire-vllm) takes those vectors to production — steering inside vLLM's CUDA graphs, per request, at zero measured overhead. **The two purple boxes are experiments run under that lens.** [steeropathy](https://github.com/moudrkat/steeropathy) wires agents together through activations instead of text; [in-two-minds](https://github.com/moudrkat/in-two-minds) catches an agent hesitating between tools before it commits.
 
 ---
 
@@ -52,6 +56,7 @@ flowchart TD
 
 Smaller, self-contained ways to look inside:
 
+- 🔥 [hotwire-vllm](https://github.com/moudrkat/hotwire-vllm) — steering vectors in production vLLM without turning off CUDA graphs: pip install, one JSON tag per request, zero measured overhead
 - 📜 [paper-remembers](https://github.com/moudrkat/paper-remembers) — Hopfield's 1982 paper, running live: rub out any part of the page and watch it rebuild itself
 - 🎭 [sixteen-voices](https://github.com/moudrkat/sixteen-voices) — how a tiny transformer encodes writing style, through LoRA adapters and attention heads
 - 👁️ [show-me-your-attention](https://github.com/moudrkat/show-me-your-attention) — attention maps and neuron activations over your own prompt
