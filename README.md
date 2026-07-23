@@ -22,7 +22,13 @@ My personal site is a chat with a tiny LLM running entirely in your browser, and
 ## 🚀 My main project is an opensource model interpretability lab - I develop it here and experiment with it on a real production app
 
 > [!TIP]
-> **Don't read — just do it.** Every repo is `pip install`-able, most run on CPU or a free Colab GPU, and each has a demo that shows something real in ~2 minutes before you configure anything — `brainscope --model tiny` opens a browser view of a model thinking; `make demo` in steering-mechanics renders real measured figures with no GPU at all. Point your own OpenAI client at brainscope and watch your app's traffic. No account, no course — clone and look.
+> **Don't read — just do it.** The core of the lab is on PyPI:
+>
+> ```
+> pip install hidden-directions brainscope hotwire-vllm
+> ```
+>
+> — the vector factory with its eval framework, the live lens server, and the production vLLM steering plugin. Most things run on CPU or a free Colab GPU, and each repo has a demo that shows something real in ~2 minutes before you configure anything — `brainscope --model tiny` opens a browser view of a model thinking; `make demo` in steering-mechanics renders real measured figures with no GPU at all. Point your own OpenAI client at brainscope and watch your app's traffic. No account, no course — install and look.
 
 > One engine for looking inside a model, one factory for the directions it steers with, and the experiments that run on both. **Click any box to open its repo.**
 
