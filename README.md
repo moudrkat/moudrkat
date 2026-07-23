@@ -11,6 +11,8 @@ So I build tools that make neural networks less mysterious — because
 interpretability shouldn't stay in research papers, it belongs in
 production. (And in zombie games. And in mushroom generators. You'll see.)
 
+**[Why I'm really doing this → the manifesto](MANIFESTO.md)**
+
 ## 💥 Come say hi in my collision chamber
 
 My personal site is a chat with a tiny LLM running entirely in your browser, and every answer it generates renders as a real particle collision. Click the event below to fire your own question into the chamber:
