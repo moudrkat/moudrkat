@@ -31,11 +31,16 @@ My personal site is a chat with a tiny LLM running entirely in your browser, and
 > pip install hidden-directions brainscope hotwire-vllm
 > ```
 >
-> — the vector factory with its eval framework, the live lens server, and the production vLLM steering plugin. Most things run on CPU or a free Colab GPU, and each repo has a demo that shows something real in ~2 minutes before you configure anything — `brainscope --model tiny` opens a browser view of a model thinking; `make demo` in steering-mechanics renders real measured figures with no GPU at all. Point your own OpenAI client at brainscope and watch your app's traffic. No account, no course — install and look.
+> — the vector factory with its eval framework, the live lens server, and the production vLLM steering plugin. Everything below runs on CPU or a free Colab GPU:
+> - `brainscope --model tiny` — a browser view of a model thinking (CPU is fine)
+> - `make demo` in steering-mechanics — real measured figures, no GPU at all
+> - point your own OpenAI client at brainscope — watch your app's live traffic
+>
+> No account, no course — install and look.
 
-> One engine for looking inside a model, one factory for the directions it steers with, and the experiments that run on both. **Click any box to open its repo.**
+**The lab runs one pre-registered research question:** *when does a steering vector generalize from calibration to deployment — and what do steering evals actually measure?* The hypotheses were written before the data, and they're allowed to lose.
 
-(The lab currently runs one pre-registered question: **when does a steering vector generalize from calibration to deployment — and what do steering evals actually measure?**)
+**Click any box to open its repo.**
 
 ```mermaid
 flowchart TD
@@ -74,9 +79,19 @@ flowchart TD
 
 ---
 
-### 🔬 Also on the bench
+## 🤝 What I'm looking for
 
-Smaller, self-contained ways to look inside:
+**Collaborators and users** — not a job (see the [manifesto](MANIFESTO.md)).
+If you build on LLMs and want to see inside your model, or you work on
+steering / interpretability and want to compare notes — or run
+[SteerBench](https://github.com/moudrkat/steering-mechanics/tree/main/steerbench)
+against your own method — open an issue on any repo and say hi. The single
+best thing you can do: `pip install`, try it, and tell me where it breaks.
+
+---
+
+<details>
+<summary>🔬 <b>Also on the bench</b> — smaller, self-contained ways to look inside</summary>
 
 - 📜 [paper-remembers](https://github.com/moudrkat/paper-remembers) — Hopfield's 1982 paper, running live: rub out any part of the page and watch it rebuild itself
 - 🎭 [sixteen-voices](https://github.com/moudrkat/sixteen-voices) — how a tiny transformer encodes writing style, through LoRA adapters and attention heads
@@ -86,14 +101,17 @@ Smaller, self-contained ways to look inside:
 - 🍄 [Mushroom-generator](https://github.com/moudrkat/Mushroom-generator) — a VAE growing mushrooms, with latent-space walks and the decoder taken apart layer by layer
 - 🍎 [Applepear](https://github.com/moudrkat/Applepear) — apples vs pears in a tiny CNN, activations and grad-CAM included
 - ⚙️ [Minimize_me](https://github.com/moudrkat/Minimize_me) — race TensorFlow optimizers across loss landscapes
+</details>
 
-### 🃏 And off the bench
+<details>
+<summary>🃏 <b>And off the bench</b></summary>
 
-- 🎨 [personal-rembrandt](https://github.com/moudrkat/personal-rembrandt) — you can't build a personal brand, so build a personal Rembrandt: paste your bio, GPT-2 reads it in your browser, and its activations repaint his 1659 self-portrait. 
+- 🎨 [personal-rembrandt](https://github.com/moudrkat/personal-rembrandt) — you can't build a personal brand, so build a personal Rembrandt: paste your bio, GPT-2 reads it in your browser, and its activations repaint his 1659 self-portrait.
 - 🛏️ [go-to-damn-bed](https://github.com/moudrkat/go-to-damn-bed) — a Claude Code skill that sends you to bed like a mom sends naughty children: it saves your work into TOMORROW.md, then counts to three. It never says what happens at three
 - 👑 [KingOfDiamonds](https://github.com/moudrkat/KingOfDiamonds) — the King of Diamonds game from *Alice in Borderland*, played by LLMs in character, recursive strategic thinking and all
 - 🗨️ [paralel-discordverse](https://github.com/moudrkat/paralel-discordverse) — your company's Discord gets a parallel universe, populated entirely by fictional colleagues
 - 🧮 [least-squares-method](https://github.com/moudrkat/least-squares-method) — code archaeology: a printed Pascal listing, photographed page by page and revived on Turbo Pascal 5.5
+</details>
 
 ---
 
