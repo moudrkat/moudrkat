@@ -50,6 +50,7 @@ flowchart TD
     tm["⚖️ <b>in-two-minds</b><br/>agent hesitating between tools"]
     hw["🔥 <b>hotwire-vllm</b><br/>steering in production vLLM"]
     sm["🧪 <b>steering-mechanics</b><br/>how steering actually works"]
+    on["📰 <b>old-news</b><br/>stale history outranking<br/>your system prompt"]
 
     hd -->|"vectors"| bs
     bs -->|"hosts & captures"| st
@@ -59,6 +60,7 @@ flowchart TD
     bs <-.->|"same spec: lab ↔ prod"| hw
     bs -->|"causal replay"| sm
     hw -.->|"vector under study"| sm
+    bs -->|"hosts & captures"| on
 
     click hd "https://github.com/moudrkat/hidden-directions"
     click bs "https://github.com/moudrkat/brainscope"
@@ -66,16 +68,17 @@ flowchart TD
     click tm "https://github.com/moudrkat/in-two-minds"
     click hw "https://github.com/moudrkat/hotwire-vllm"
     click sm "https://github.com/moudrkat/steering-mechanics"
+    click on "https://github.com/moudrkat/old-news"
 
     classDef engine fill:#1f6feb,stroke:#1158c7,color:#ffffff;
     classDef exp fill:#8957e5,stroke:#6e40c9,color:#ffffff;
     class bs,hd,hw engine;
-    class st,tm,sm exp;
+    class st,tm,sm,on exp;
 ```
 
 > **The blue boxes are the instrument.** [brainscope](https://github.com/moudrkat/brainscope) hosts any Hugging Face model and streams its internals to the browser; [hidden-directions](https://github.com/moudrkat/hidden-directions) makes the steering vectors — auto-calibrates them (Optuna, with a KL damage guard), bakes them into weights, then audits for the bake; [hotwire-vllm](https://github.com/moudrkat/hotwire-vllm) takes those vectors to production — steering inside vLLM's CUDA graphs, per request, steered speed = vanilla vLLM. All three speak one steering spec: a vector calibrated under the lens deploys unchanged, and a misbehaving production conversation replays back under the lens.
 
-> **The purple boxes are experiments run under that lens.** [steeropathy](https://github.com/moudrkat/steeropathy) wires agents together through activations instead of text; [in-two-minds](https://github.com/moudrkat/in-two-minds) catches an agent hesitating between tools before it commits; [steering-mechanics](https://github.com/moudrkat/steering-mechanics) asks how steering vectors actually work inside the model.
+> **The purple boxes are experiments run under that lens.** [steeropathy](https://github.com/moudrkat/steeropathy) wires agents together through activations instead of text; [in-two-minds](https://github.com/moudrkat/in-two-minds) catches an agent hesitating between tools before it commits; [steering-mechanics](https://github.com/moudrkat/steering-mechanics) asks how steering vectors actually work inside the model; [old-news](https://github.com/moudrkat/old-news) is about a system prompt losing to the conversation history that outlived it — change a rule mid-product and the old one is still in the context, still being obeyed.
 
 ---
 
