@@ -116,6 +116,7 @@ best thing you can do: `pip install`, try it, and tell me where it breaks.
 - 🛏️ [go-to-damn-bed](https://github.com/moudrkat/go-to-damn-bed) — a Claude Code skill that sends you to bed like a mom sends naughty children: it saves your work into TOMORROW.md, then counts to three. It never says what happens at three
 - 👑 [KingOfDiamonds](https://github.com/moudrkat/KingOfDiamonds) — the King of Diamonds game from *Alice in Borderland*, played by LLMs in character, recursive strategic thinking and all
 - 🗨️ [paralel-discordverse](https://github.com/moudrkat/paralel-discordverse) — your company's Discord gets a parallel universe, populated entirely by fictional colleagues
+- 🧅 [underglaze](https://github.com/moudrkat/underglaze) — the blue tile on a kitchen wall, written as a sum of cosines: 62 815 of them for 99 %. Three knobs to drag, and one of them turns the plant into a snowflake. The pattern everyone here calls *cibulák* turns out to have no onion in it
 - 🌧️ [coalescence](https://github.com/moudrkat/coalescence) — a raindrop landing on an already-wet window doesn't splash and doesn't soak in, it stops being a drop and becomes film. The thin-film equation, solved and rendered in your browser: there is no drop in the equation, the drop is only where it starts
 - 🧮 [least-squares-method](https://github.com/moudrkat/least-squares-method) — code archaeology: a printed Pascal listing, photographed page by page and revived on Turbo Pascal 5.5
 </details>
