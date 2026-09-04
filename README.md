@@ -96,7 +96,6 @@ best thing you can do: `pip install`, try it, and tell me where it breaks.
 <details>
 <summary>🔬 <b>Also on the bench</b> — smaller, self-contained ways to look inside</summary>
 
-- 🚪 [resi-doom](https://github.com/moudrkat/resi-doom) — walk inside a language model while it generates; it looks like Doom. One chamber per layer, the windows are the attention matrices, the numbers on the wall are the residual stream. Fed live by brainscope. [▶ open it](https://unt1l1f1nd-resi-doom.static.hf.space)
 - 🔦 [tournament-watermarking](https://github.com/moudrkat/tournament-watermarking) — the watermark Anthropic now puts in Claude’s output, running live as a decaying newspaper: two columns from the same model, one of them watermarked, and a torch you hold to the page to find out which
 - 📜 [paper-remembers](https://github.com/moudrkat/paper-remembers) — Hopfield's 1982 paper, running live: rub out any part of the page and watch it rebuild itself
 - 🎭 [sixteen-voices](https://github.com/moudrkat/sixteen-voices) — how a tiny transformer encodes writing style, through LoRA adapters and attention heads
@@ -111,6 +110,7 @@ best thing you can do: `pip install`, try it, and tell me where it breaks.
 <details>
 <summary>🃏 <b>And off the bench</b></summary>
 
+- 🚪 [resi-doom](https://github.com/moudrkat/resi-doom) — Doom, except the level is a language model mid-sentence: one chamber per layer, attention matrices for windows, the residual stream painted on the walls. `W` and `S`. That is the control scheme. [▶ open it](https://unt1l1f1nd-resi-doom.static.hf.space)
 - 🎸 [unlived](https://github.com/moudrkat/unlived) — a gamebook of the life you never lived: it writes that life as a playable story, and you win by quitting the game to go live it for real
 - 🎉 [promptparty](https://github.com/moudrkat/promptparty) — born mid-hackathon, shipped the same day: a dashboard for friends agent-coding in one room that says when to 🗣️ TALK (all agents cooking) and when to ⌨️ PROMPT (someone's agent is waiting). Claude Code hooks report automatically; `pip install promptparty`
 - 🎨 [personal-rembrandt](https://github.com/moudrkat/personal-rembrandt) — you can't build a personal brand, so build a personal Rembrandt: paste your bio, GPT-2 reads it in your browser, and its activations repaint his 1659 self-portrait.
