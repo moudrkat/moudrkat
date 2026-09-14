@@ -7,10 +7,6 @@ opaque — first particle collisions, then risk models, now neural networks.
 
 > The models talk to us all day. **I want to be able to affect them back.**
 
-So I build tools that make neural networks less mysterious — because
-interpretability shouldn't stay in research papers, it belongs in
-production. (And in zombie games. And in mushroom generators. You'll see.)
-
 **[Why I'm really doing this → the manifesto](MANIFESTO.md)**
 
 ## 💥 Come say hi in my collision chamber
@@ -19,7 +15,7 @@ My personal site is a chat with a tiny LLM running entirely in your browser, and
 
 [![One question fired into the chamber: the model answers while its layers, attention heads and logit-lens flips render as a real collision.](media/detektor.gif)](https://unt1l1f1nd-detektor.static.hf.space)
 
-## 🚀 My main project is an opensource model interpretability lab - I develop it here and experiment with it on a real production app
+## 🚀 An open-source interpretability lab, tested on a real production app
 
 > **The stack that makes a model legible in production — from watching, to diagnosing, to fixing.**
 > *Watch* it think ([brainscope](https://github.com/moudrkat/brainscope)) → *diagnose* why it did that (causal replay + the lens) → *fix* it at the source with a calibrated steering vector, receipts attached ([hidden-directions](https://github.com/moudrkat/hidden-directions) → [hotwire-vllm](https://github.com/moudrkat/hotwire-vllm)). Observability first; intervention last, once the instruments have earned it.
@@ -31,14 +27,11 @@ My personal site is a chat with a tiny LLM running entirely in your browser, and
 > pip install hidden-directions brainscope hotwire-vllm
 > ```
 >
-> — the vector factory with its eval framework, the live lens server, and the production vLLM steering plugin. Everything below runs on CPU or a free Colab GPU:
-> - `brainscope --model tiny` — a browser view of a model thinking (CPU is fine)
-> - `make demo` in steering-mechanics — real measured figures, no GPU at all
+> — the vector factory, the live lens server, the production vLLM plugin. CPU is fine:
+> - `brainscope --model tiny` — a browser view of a model thinking
 > - point your own OpenAI client at brainscope — watch your app's live traffic
 >
 > No account, no course — install and look.
-
-**The lab runs one pre-registered research question:** *when does a steering vector generalize from calibration to deployment — and what do steering evals actually measure?* The hypotheses were written before the data, and they're allowed to lose.
 
 **Click any box to open its repo.**
 
@@ -76,20 +69,15 @@ flowchart TD
     class st,tm,sm,on exp;
 ```
 
-> **The blue boxes are the instrument.** [brainscope](https://github.com/moudrkat/brainscope) hosts any Hugging Face model and streams its internals to the browser; [hidden-directions](https://github.com/moudrkat/hidden-directions) makes the steering vectors — auto-calibrates them (Optuna, with a KL damage guard), bakes them into weights, then audits for the bake; [hotwire-vllm](https://github.com/moudrkat/hotwire-vllm) takes those vectors to production — steering inside vLLM's CUDA graphs, per request, steered speed = vanilla vLLM. All three speak one steering spec: a vector calibrated under the lens deploys unchanged, and a misbehaving production conversation replays back under the lens.
-
-> **The purple boxes are experiments run under that lens.** [steeropathy](https://github.com/moudrkat/steeropathy) wires agents together through activations instead of text; [in-two-minds](https://github.com/moudrkat/in-two-minds) catches an agent hesitating between tools before it commits; [steering-mechanics](https://github.com/moudrkat/steering-mechanics) asks how steering vectors actually work inside the model; [old-news](https://github.com/moudrkat/old-news) is about a system prompt losing to the conversation history that outlived it — change a rule mid-product and the old one is still in the context, still being obeyed.
-
 ---
 
 ## 🤝 What I'm looking for
 
 **Collaborators and users** — not a job (see the [manifesto](MANIFESTO.md)).
-If you build on LLMs and want to see inside your model, or you work on
-steering / interpretability and want to compare notes — or run
+Build on LLMs and want to see inside your model? `pip install`, try it, and
+open an issue where it breaks. Work on steering or interpretability? Run
 [SteerBench](https://github.com/moudrkat/steering-mechanics/tree/main/steerbench)
-against your own method — open an issue on any repo and say hi. The single
-best thing you can do: `pip install`, try it, and tell me where it breaks.
+against your own method and tell me what you get.
 
 ---
 
