@@ -73,8 +73,7 @@ flowchart TD
 
 ## 🤝 What I'm looking for
 
-**Collaborators and users** — not a job (see the [manifesto](MANIFESTO.md)).
-Build on LLMs and want to see inside your model? `pip install`, try it, and
+**Collaborators and users.** Build on LLMs and want to see inside your model? `pip install`, try it, and
 open an issue where it breaks. Work on steering or interpretability? Run
 [SteerBench](https://github.com/moudrkat/steering-mechanics/tree/main/steerbench)
 against your own method and tell me what you get.
