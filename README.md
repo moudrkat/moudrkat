@@ -80,6 +80,15 @@ against your own method and tell me what you get.
 
 ---
 
+## 🔩 Shoved into the device
+
+> Research that only runs behind a server isn't finished. These take it the last mile, natively.
+
+- 🦵 [kneejerk](https://github.com/moudrkat/kneejerk) — Jev-style decision models (Liquid d1, OpenJev, Granite Switch, Laya…) as a library on llama.cpp: no server, no generation, one forward pass, built to run inside a phone app. llama.cpp only had this in `llama-server`; kneejerk is that code with the server cut away, checked against the server on every family it can get a GGUF for.
+- 🔥 [hotwire-vllm](https://github.com/moudrkat/hotwire-vllm) — the same move for steering: a calibrated vector plugged into production vLLM (also in the lab above).
+
+---
+
 <details>
 <summary>🔬 <b>Also on the bench</b> — smaller, self-contained ways to look inside</summary>
 
