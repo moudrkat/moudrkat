@@ -41,13 +41,13 @@ My personal site is a chat with a tiny LLM running entirely in your browser, and
 flowchart TD
     hd["🧭 <b>hidden-directions</b><br/>behavior → vector"]
     bs(["🧠 <b>brainscope</b><br/>watch a model think<br/>(on your running app)"])
+    ps(["📱 <b>probascope</b><br/>watch a model think<br/>(inside your phone)"])
     st["🕹️ <b>steeropathy</b><br/>agents talking through activations"]
     tm["⚖️ <b>in-two-minds</b><br/>agent hesitating between tools"]
     hw["🔥 <b>hotwire-vllm</b><br/>steering in production vLLM"]
     sm["🧪 <b>steering-mechanics</b><br/>how steering actually works"]
     on["📰 <b>old-news</b><br/>stale history outranking<br/>your system prompt"]
     kj["🦵 <b>kneejerk</b><br/>decision models as a library<br/>(llama.cpp, no server)"]
-    ps(["📱 <b>probascope</b><br/>the lens in a phone"])
 
     hd -->|"vectors"| bs
     bs -->|"hosts & captures"| st
@@ -58,8 +58,8 @@ flowchart TD
     bs -->|"causal replay"| sm
     hw -.->|"vector under study"| sm
     bs -->|"hosts & captures"| on
+    bs <-.->|"the lens: server ↔ phone"| ps
     kj -->|"model inside the app"| ps
-    bs -.->|"same idea, on device"| ps
 
     click hd "https://github.com/moudrkat/hidden-directions"
     click bs "https://github.com/moudrkat/brainscope"
@@ -73,7 +73,7 @@ flowchart TD
 
     classDef engine fill:#1f6feb,stroke:#1158c7,color:#ffffff;
     classDef exp fill:#8957e5,stroke:#6e40c9,color:#ffffff;
-    class bs,hd,hw engine;
+    class bs,ps,hd,hw,kj engine;
     class st,tm,sm,on exp;
 ```
 
