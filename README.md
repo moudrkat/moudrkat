@@ -6,6 +6,8 @@ I've spent my whole career looking inside systems that would rather stay
 opaque — first particle collisions, then risk models, now neural networks.
 
 > The models talk to us all day. **I want to be able to affect them back.**
+>
+> And I want to shove AI into the device and look inside it, because I believe the future is in models we can see into, ideally on device.
 
 **[Why I'm really doing this → the manifesto](MANIFESTO.md)**
 
@@ -44,6 +46,8 @@ flowchart TD
     hw["🔥 <b>hotwire-vllm</b><br/>steering in production vLLM"]
     sm["🧪 <b>steering-mechanics</b><br/>how steering actually works"]
     on["📰 <b>old-news</b><br/>stale history outranking<br/>your system prompt"]
+    kj["🦵 <b>kneejerk</b><br/>decision models as a library<br/>(llama.cpp, no server)"]
+    ps(["📱 <b>probascope</b><br/>the lens in a phone"])
 
     hd -->|"vectors"| bs
     bs -->|"hosts & captures"| st
@@ -54,6 +58,8 @@ flowchart TD
     bs -->|"causal replay"| sm
     hw -.->|"vector under study"| sm
     bs -->|"hosts & captures"| on
+    kj -->|"model inside the app"| ps
+    bs -.->|"same idea, on device"| ps
 
     click hd "https://github.com/moudrkat/hidden-directions"
     click bs "https://github.com/moudrkat/brainscope"
@@ -62,6 +68,8 @@ flowchart TD
     click hw "https://github.com/moudrkat/hotwire-vllm"
     click sm "https://github.com/moudrkat/steering-mechanics"
     click on "https://github.com/moudrkat/old-news"
+    click kj "https://github.com/moudrkat/kneejerk"
+    click ps "https://github.com/moudrkat/probascope"
 
     classDef engine fill:#1f6feb,stroke:#1158c7,color:#ffffff;
     classDef exp fill:#8957e5,stroke:#6e40c9,color:#ffffff;
@@ -85,6 +93,7 @@ against your own method and tell me what you get.
 > Research that only runs behind a server isn't finished. These take it the last mile, natively.
 
 - 🦵 [kneejerk](https://github.com/moudrkat/kneejerk) — Jev-style decision models (Liquid d1, OpenJev, Granite Switch, Laya…) as a library on llama.cpp: no server, no generation, one forward pass, built to run inside a phone app. llama.cpp only had this in `llama-server`; kneejerk is that code with the server cut away, checked against the server on every family it can get a GGUF for.
+- 📱 [probascope](https://github.com/moudrkat/probascope) — an Android app on kneejerk: a decision model runs in the phone, and you drag over its layers to see where the answer formed, and tap the blocks your text went through. The lens, in a pocket.
 - 🔥 [hotwire-vllm](https://github.com/moudrkat/hotwire-vllm) — the same move for steering: a calibrated vector plugged into production vLLM (also in the lab above).
 
 ---
