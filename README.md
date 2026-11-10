@@ -7,7 +7,7 @@ opaque — first particle collisions, then risk models, now neural networks.
 
 > The models talk to us all day. **I want to be able to affect them back.**
 >
-> And I want to shove AI into the device and look inside it, because I believe the future is in models we can see into, ideally on device.
+> And I want to shove AI into the device and look inside it. I believe the future is **edge AI and interpretability** together: models that run where you are, and that you can see into.
 
 **[Why I'm really doing this → the manifesto](MANIFESTO.md)**
 
