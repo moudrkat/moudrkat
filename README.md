@@ -20,7 +20,7 @@ My personal site is a chat with a tiny LLM running entirely in your browser, and
 ## 🚀 An open-source interpretability lab, tested on a real production app
 
 > **The stack that makes a model legible in production — from watching, to diagnosing, to fixing.**
-> *Watch* it think ([brainscope](https://github.com/moudrkat/brainscope)) → *diagnose* why it did that (causal replay + the lens) → *fix* it at the source with a calibrated steering vector, receipts attached ([hidden-directions](https://github.com/moudrkat/hidden-directions) → [hotwire-vllm](https://github.com/moudrkat/hotwire-vllm)). Observability first; intervention last, once the instruments have earned it.
+> *Watch* it think, on your server ([brainscope](https://github.com/moudrkat/brainscope)) or inside your phone ([probascope](https://github.com/moudrkat/probascope)) → *diagnose* why it did that (causal replay + the lens) → *fix* it at the source with a calibrated steering vector, receipts attached ([hidden-directions](https://github.com/moudrkat/hidden-directions) → [hotwire-vllm](https://github.com/moudrkat/hotwire-vllm)). Observability first; intervention last, once the instruments have earned it.
 
 > [!TIP]
 > **Don't read — just do it.** The core of the lab is on PyPI:
