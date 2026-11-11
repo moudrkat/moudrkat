@@ -115,6 +115,7 @@ against your own method and tell me what you get.
 <details>
 <summary>🃏 <b>And off the bench</b></summary>
 
+- 🧭 [decide-me](https://github.com/moudrkat/decide-me) — no more decisions: point your phone at the world and a decision model inside it tells you what to do next. Go left 39 %, take the next tram 30 %. I said I would not build this. I built it the same morning
 - 🌙 [tri-kumpani](https://github.com/moudrkat/tri-kumpani) — Li Po's *Drinking Alone under the Moon*, read by a small Chinese model twelve hundred years later: tap a token to see which words it raises its cup to, head by head, then pour it wine and watch the next verse fall apart into Chinese characters. The tokenized poem is also printed on a jacket. [▶ open it](https://moudrkat.github.io/tri-kumpani/)
 - 🚪 [resi-doom](https://github.com/moudrkat/resi-doom) — Doom, except the level is a language model mid-sentence: one chamber per layer, attention matrices for windows, the residual stream painted on the walls. `W` and `S`. That is the control scheme. [▶ open it](https://unt1l1f1nd-resi-doom.static.hf.space)
 - 🎸 [unlived](https://github.com/moudrkat/unlived) — a gamebook of the life you never lived: it writes that life as a playable story, and you win by quitting the game to go live it for real
