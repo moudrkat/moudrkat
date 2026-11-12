@@ -48,6 +48,7 @@ flowchart TD
     sm["🧪 <b>steering-mechanics</b><br/>how steering actually works"]
     on["📰 <b>old-news</b><br/>stale history outranking<br/>your system prompt"]
     kj["🦵 <b>kneejerk</b><br/>decision models as a library<br/>(llama.cpp, no server)"]
+    hi["🎯 <b>hidden-intent</b><br/>a probe that reads intent<br/>before the first line"]
 
     hd -->|"vectors"| bs
     bs -->|"hosts & captures"| st
@@ -60,6 +61,7 @@ flowchart TD
     bs -->|"hosts & captures"| on
     bs <-.->|"the lens: server ↔ phone"| ps
     kj -->|"model inside the app"| ps
+    hi -->|"probe"| bs
 
     click hd "https://github.com/moudrkat/hidden-directions"
     click bs "https://github.com/moudrkat/brainscope"
@@ -70,11 +72,12 @@ flowchart TD
     click on "https://github.com/moudrkat/old-news"
     click kj "https://github.com/moudrkat/kneejerk"
     click ps "https://github.com/moudrkat/probascope"
+    click hi "https://github.com/moudrkat/hidden-intent"
 
     classDef engine fill:#1f6feb,stroke:#1158c7,color:#ffffff;
     classDef exp fill:#8957e5,stroke:#6e40c9,color:#ffffff;
     class bs,ps,hd,hw,kj engine;
-    class st,tm,sm,on exp;
+    class st,tm,sm,on,hi exp;
 ```
 
 ---
