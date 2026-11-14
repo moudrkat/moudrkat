@@ -34,4 +34,4 @@ The idea of keeping such a list is Neel Nanda's ([200 Concrete Open Problems in 
 
 ## If you get stuck
 
-Open an issue and say where. I answer within a day, usually faster; the fastest merge so far took a few hours.
+Open an issue and say where. I answer within a day. The first outside PR was merged and released the next morning.
