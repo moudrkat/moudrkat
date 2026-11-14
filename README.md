@@ -19,7 +19,9 @@ opaque — first particle collisions, then risk models, now neural networks.
 | 🔩 **run a model on the device**: in a phone, or on a chip that costs less than lunch | [edge AI](#-shoved-into-the-device-edge-ai) |
 | 🎈 **just play with something** | [the two drawers](#-just-for-fun-two-drawers), or [the collision chamber](#-come-say-hi-in-my-collision-chamber) right below |
 
----
+<br>
+
+<img src="media/bar-chamber.svg" width="100%" height="10" alt="">
 
 ## 💥 Come say hi in my collision chamber
 
@@ -27,7 +29,9 @@ My personal site is a chat with a tiny LLM running entirely in your browser, and
 
 [![One question fired into the chamber: the model answers while its layers, attention heads and logit-lens flips render as a real collision.](media/detektor.gif)](https://unt1l1f1nd-detektor.static.hf.space)
 
----
+<br>
+
+<img src="media/bar-lab.svg" width="100%" height="10" alt="">
 
 ## 🚀 An open-source interpretability lab, tested on a real production app
 
@@ -92,7 +96,9 @@ flowchart TD
     class st,tm,sm,on,hi exp;
 ```
 
----
+<br>
+
+<img src="media/bar-edge.svg" width="100%" height="10" alt="">
 
 ## 🔩 Shoved into the device: edge AI
 
@@ -115,7 +121,9 @@ An ESP32-S3: 16 MB of flash, a few dollars, no operating system. Models of 3–4
 
 Small models on small devices are the ones you can actually open up: [probascope](https://github.com/moudrkat/probascope) is the lens in a pocket, and [hotwire-vllm](https://github.com/moudrkat/hotwire-vllm) is the same last-mile move for steering, in production vLLM.
 
----
+<br>
+
+<img src="media/bar-looking.svg" width="100%" height="10" alt="">
 
 ## 🤝 What I'm looking for
 
@@ -124,7 +132,9 @@ open an issue where it breaks. Work on steering or interpretability? Run
 [SteerBench](https://github.com/moudrkat/steering-mechanics/tree/main/steerbench)
 against your own method and tell me what you get.
 
----
+<br>
+
+<img src="media/bar-fun.svg" width="100%" height="10" alt="">
 
 ## 🎈 Just for fun: two drawers
 
