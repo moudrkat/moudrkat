@@ -11,6 +11,14 @@ opaque — first particle collisions, then risk models, now neural networks.
 
 **[Why I'm really doing this → the manifesto](MANIFESTO.md)**
 
+**Two things I do, and where to find them:**
+
+| you want to | go to |
+|---|---|
+| 🔬 **see inside a model**: watch it think, find out why it did that, fix it | [the interpretability lab](#-an-open-source-interpretability-lab-tested-on-a-real-production-app) |
+| 🔩 **run a model on the device**: in a phone, or on a chip that costs less than lunch | [edge AI](#-shoved-into-the-device-edge-ai) |
+| 🎈 just play with something | [the collision chamber](#-come-say-hi-in-my-collision-chamber), or the two drawers at the bottom |
+
 ## 💥 Come say hi in my collision chamber
 
 My personal site is a chat with a tiny LLM running entirely in your browser, and every answer it generates renders as a real particle collision. Click the event below to fire your own question into the chamber:
@@ -91,13 +99,26 @@ against your own method and tell me what you get.
 
 ---
 
-## 🔩 Shoved into the device
+## 🔩 Shoved into the device: edge AI
 
-> Research that only runs behind a server isn't finished. These take it the last mile, natively.
+> Research that only runs behind a server isn't finished. These take it the last mile, natively. No cloud, no account, nothing phones home.
+
+### 📱 In a phone
 
 - 🦵 [kneejerk](https://github.com/moudrkat/kneejerk) — Jev-style decision models (Liquid d1, OpenJev, Granite Switch, Laya…) as a library on llama.cpp: no server, no generation, one forward pass, built to run inside a phone app. llama.cpp only had this in `llama-server`; kneejerk is that code with the server cut away, checked against the server on every family it can get a GGUF for.
 - 📱 [probascope](https://github.com/moudrkat/probascope) — an Android app on kneejerk: a decision model runs in the phone, and you drag over its layers to see where the answer formed, and tap the blocks your text went through. The lens, in a pocket.
-- 🔥 [hotwire-vllm](https://github.com/moudrkat/hotwire-vllm) — the same move for steering: a calibrated vector plugged into production vLLM (also in the lab above).
+- 🧭 [decide-me](https://github.com/moudrkat/decide-me) — point your phone at the world and a decision model inside it tells you what to do next. I said I would not build this.
+
+### 🔌 Inference on a chip
+
+An ESP32-S3: 16 MB of flash, a few dollars, no operating system. Models of 3–4 million parameters, trained from scratch, running on it.
+
+- ✏️ [esp32-ai](https://github.com/moudrkat/esp32-ai) — you type a sentence, a 3M-parameter model **inside the chip** writes a small program for its own screen, and the chip runs it. Built on [slvDev/esp32-ai](https://github.com/slvDev/esp32-ai).
+- 🌡️ [maxwell-on-a-chip](https://github.com/moudrkat/maxwell-on-a-chip) — a tiny model of Maxwell and Boltzmann, sampled with their own distribution, at the temperature of the room. Warm the sensor in your hand and they start speaking each other's language. Maxwell's demon is on the BOOT button.
+
+### 🤝 Where the two meet
+
+Small models on small devices are the ones you can actually open up: [probascope](https://github.com/moudrkat/probascope) is the lens in a pocket, and [hotwire-vllm](https://github.com/moudrkat/hotwire-vllm) is the same last-mile move for steering, in production vLLM.
 
 ---
 
