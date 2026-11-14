@@ -17,13 +17,17 @@ opaque — first particle collisions, then risk models, now neural networks.
 |---|---|
 | 🔬 **see inside a model**: watch it think, find out why it did that, fix it | [the interpretability lab](#-an-open-source-interpretability-lab-tested-on-a-real-production-app) |
 | 🔩 **run a model on the device**: in a phone, or on a chip that costs less than lunch | [edge AI](#-shoved-into-the-device-edge-ai) |
-| 🎈 just play with something | [the collision chamber](#-come-say-hi-in-my-collision-chamber), or the two drawers at the bottom |
+| 🎈 **just play with something** | [the two drawers](#-just-for-fun-two-drawers), or [the collision chamber](#-come-say-hi-in-my-collision-chamber) right below |
+
+---
 
 ## 💥 Come say hi in my collision chamber
 
 My personal site is a chat with a tiny LLM running entirely in your browser, and every answer it generates renders as a real particle collision. Click the event below to fire your own question into the chamber:
 
 [![One question fired into the chamber: the model answers while its layers, attention heads and logit-lens flips render as a real collision.](media/detektor.gif)](https://unt1l1f1nd-detektor.static.hf.space)
+
+---
 
 ## 🚀 An open-source interpretability lab, tested on a real production app
 
@@ -90,15 +94,6 @@ flowchart TD
 
 ---
 
-## 🤝 What I'm looking for
-
-**Collaborators and users.** Build on LLMs and want to see inside your model? `pip install`, try it, and
-open an issue where it breaks. Work on steering or interpretability? Run
-[SteerBench](https://github.com/moudrkat/steering-mechanics/tree/main/steerbench)
-against your own method and tell me what you get.
-
----
-
 ## 🔩 Shoved into the device: edge AI
 
 > Research that only runs behind a server isn't finished. These take it the last mile, natively. No cloud, no account, nothing phones home.
@@ -121,6 +116,19 @@ An ESP32-S3: 16 MB of flash, a few dollars, no operating system. Models of 3–4
 Small models on small devices are the ones you can actually open up: [probascope](https://github.com/moudrkat/probascope) is the lens in a pocket, and [hotwire-vllm](https://github.com/moudrkat/hotwire-vllm) is the same last-mile move for steering, in production vLLM.
 
 ---
+
+## 🤝 What I'm looking for
+
+**Collaborators and users.** Build on LLMs and want to see inside your model? `pip install`, try it, and
+open an issue where it breaks. Work on steering or interpretability? Run
+[SteerBench](https://github.com/moudrkat/steering-mechanics/tree/main/steerbench)
+against your own method and tell me what you get.
+
+---
+
+## 🎈 Just for fun: two drawers
+
+> Smaller things, and things that got out of hand. Open either.
 
 <details>
 <summary>🔬 <b>Also on the bench</b> — smaller, self-contained ways to look inside</summary>
