@@ -7,7 +7,7 @@ opaque — first particle collisions, then risk models, now neural networks.
 
 > The models talk to us all day. **I want to be able to affect them back.**
 >
-> And I want to shove AI into the device and look inside it. I believe the future is **edge AI and interpretability** together: models that run where you are, and that you can see into.
+> And I want to shove AI into the device and look inside it: **edge AI and interpretability**, together.
 
 **[Why I'm really doing this → the manifesto](MANIFESTO.md)**
 
@@ -18,6 +18,18 @@ opaque — first particle collisions, then risk models, now neural networks.
 | 🔬 **see inside a model**: watch it think, find out why it did that, fix it | [the interpretability lab](#-an-open-source-interpretability-lab-tested-on-a-real-production-app) |
 | 🔩 **run a model on the device**: in a phone, or on a chip that costs less than lunch | [edge AI](#-shoved-into-the-device-edge-ai) |
 | 🎈 **just play with something** | [the two drawers](#-just-for-fun-two-drawers), or [the collision chamber](#-come-say-hi-in-my-collision-chamber) right below |
+
+**Five minutes, no account, no chip:**
+
+```
+pip install brainscope && brainscope --model tiny        # watch a model think, in your browser
+```
+```
+git clone https://github.com/moudrkat/maxwell-on-a-chip && cd maxwell-on-a-chip
+cc -O2 -o host/maxwell host/maxwell.c -lm && host/maxwell 28    # Maxwell and Boltzmann at 28 °C
+```
+
+**Want to do more than look?** [Open questions I'd love help with](OPEN-QUESTIONS.md).
 
 <br>
 
@@ -35,21 +47,10 @@ My personal site is a chat with a tiny LLM running entirely in your browser, and
 
 ## 🚀 An open-source interpretability lab, tested on a real production app
 
-> **The stack that makes a model legible in production — from watching, to diagnosing, to fixing.**
-> *Watch* it think, on your server ([brainscope](https://github.com/moudrkat/brainscope)) or inside your phone ([probascope](https://github.com/moudrkat/probascope)) → *diagnose* why it did that (causal replay + the lens) → *fix* it at the source with a calibrated steering vector, receipts attached ([hidden-directions](https://github.com/moudrkat/hidden-directions) → [hotwire-vllm](https://github.com/moudrkat/hotwire-vllm)). Observability first; intervention last, once the instruments have earned it.
+> *Watch* a model think ([brainscope](https://github.com/moudrkat/brainscope), [probascope](https://github.com/moudrkat/probascope)) → *diagnose* why it did that → *fix* it at the source ([hidden-directions](https://github.com/moudrkat/hidden-directions) → [hotwire-vllm](https://github.com/moudrkat/hotwire-vllm)). Observability first; intervention last, once the instruments have earned it.
 
 > [!TIP]
-> **Don't read — just do it.** The core of the lab is on PyPI:
->
-> ```
-> pip install hidden-directions brainscope hotwire-vllm
-> ```
->
-> — the vector factory, the live lens server, the production vLLM plugin. CPU is fine:
-> - `brainscope --model tiny` — a browser view of a model thinking
-> - point your own OpenAI client at brainscope — watch your app's live traffic
->
-> No account, no course — install and look.
+> **Don't read, just do it.** `pip install brainscope`, then `brainscope --model tiny`: a browser view of a model thinking. CPU is fine. No account, no course.
 
 **Click any box to open its repo.**
 
@@ -106,8 +107,8 @@ flowchart TD
 
 ### 📱 In a phone
 
-- 🦵 [kneejerk](https://github.com/moudrkat/kneejerk) — Jev-style decision models (Liquid d1, OpenJev, Granite Switch, Laya…) as a library on llama.cpp: no server, no generation, one forward pass, built to run inside a phone app. llama.cpp only had this in `llama-server`; kneejerk is that code with the server cut away, checked against the server on every family it can get a GGUF for.
-- 📱 [probascope](https://github.com/moudrkat/probascope) — an Android app on kneejerk: a decision model runs in the phone, and you drag over its layers to see where the answer formed, and tap the blocks your text went through. The lens, in a pocket.
+- 🦵 [kneejerk](https://github.com/moudrkat/kneejerk) — decision models as a library on llama.cpp: no server, one forward pass, built for a phone app.
+- 📱 [probascope](https://github.com/moudrkat/probascope) — an Android app: a decision model runs in the phone, and you drag over its layers to see where the answer formed.
 - 🧭 [decide-me](https://github.com/moudrkat/decide-me) — point your phone at the world and a decision model inside it tells you what to do next. I said I would not build this.
 
 ### 🔌 Inference on a chip
@@ -115,7 +116,7 @@ flowchart TD
 An ESP32-S3: 16 MB of flash, a few dollars, no operating system. Models of 3–4 million parameters, trained from scratch, running on it.
 
 - ✏️ [esp32-ai](https://github.com/moudrkat/esp32-ai) — you type a sentence, a 3M-parameter model **inside the chip** writes a small program for its own screen, and the chip runs it. Built on [slvDev/esp32-ai](https://github.com/slvDev/esp32-ai).
-- 🌡️ [maxwell-on-a-chip](https://github.com/moudrkat/maxwell-on-a-chip) — a tiny model of Maxwell and Boltzmann, sampled with their own distribution, at the temperature of the room. Warm the sensor in your hand and they start speaking each other's language. Maxwell's demon is on the BOOT button.
+- 🌡️ [maxwell-on-a-chip](https://github.com/moudrkat/maxwell-on-a-chip) — a tiny model of Maxwell and Boltzmann, sampled with their own distribution, at the temperature of the room. Maxwell's demon is on the BOOT button.
 
 ### 🤝 Where the two meet
 
@@ -143,32 +144,31 @@ against your own method and tell me what you get.
 <details>
 <summary>🔬 <b>Also on the bench</b> — smaller, self-contained ways to look inside</summary>
 
-- 🔦 [tournament-watermarking](https://github.com/moudrkat/tournament-watermarking) — the watermark Anthropic now puts in Claude’s output, running live as a decaying newspaper: two columns from the same model, one of them watermarked, and a torch you hold to the page to find out which
-- 📜 [paper-remembers](https://github.com/moudrkat/paper-remembers) — Hopfield's 1982 paper, running live: rub out any part of the page and watch it rebuild itself
-- 🎭 [sixteen-voices](https://github.com/moudrkat/sixteen-voices) — how a tiny transformer encodes writing style, through LoRA adapters and attention heads
-- 👁️ [show-me-your-attention](https://github.com/moudrkat/show-me-your-attention) — attention maps and neuron activations over your own prompt
-- 💥 [detektor](https://github.com/moudrkat/detektor) — the collision chamber above, open source (SmolLM2 in your browser, no server)
-- 🖼️ [jepa-demo](https://github.com/moudrkat/jepa-demo) — I-JEPA & V-JEPA 2 hands-on, no GPU needed, with a visual deep-dive article
-- 🍄 [Mushroom-generator](https://github.com/moudrkat/Mushroom-generator) — a VAE growing mushrooms, with latent-space walks and the decoder taken apart layer by layer
-- 🍎 [Applepear](https://github.com/moudrkat/Applepear) — apples vs pears in a tiny CNN, activations and grad-CAM included
-- ⚙️ [Minimize_me](https://github.com/moudrkat/Minimize_me) — race TensorFlow optimizers across loss landscapes
+- 🔦 [tournament-watermarking](https://github.com/moudrkat/tournament-watermarking) — the watermark Anthropic now puts in Claude's output, running live as a decaying newspaper.
+- 📜 [paper-remembers](https://github.com/moudrkat/paper-remembers) — Hopfield's 1982 paper, running live: rub out any part of the page and watch it rebuild itself.
+- 🎭 [sixteen-voices](https://github.com/moudrkat/sixteen-voices) — how a tiny transformer encodes writing style.
+- 👁️ [show-me-your-attention](https://github.com/moudrkat/show-me-your-attention) — attention maps and neuron activations over your own prompt.
+- 💥 [detektor](https://github.com/moudrkat/detektor) — the collision chamber above, open source.
+- 🖼️ [jepa-demo](https://github.com/moudrkat/jepa-demo) — I-JEPA & V-JEPA 2 hands-on, no GPU needed.
+- 🍄 [Mushroom-generator](https://github.com/moudrkat/Mushroom-generator) — a VAE growing mushrooms, its decoder taken apart layer by layer.
+- 🍎 [Applepear](https://github.com/moudrkat/Applepear) — apples vs pears in a tiny CNN, grad-CAM included.
+- ⚙️ [Minimize_me](https://github.com/moudrkat/Minimize_me) — race TensorFlow optimizers across loss landscapes.
 </details>
 
 <details>
 <summary>🃏 <b>And off the bench</b></summary>
 
-- 🧭 [decide-me](https://github.com/moudrkat/decide-me) — no more decisions: point your phone at the world and a decision model inside it tells you what to do next. Go left 39 %, take the next tram 30 %. I said I would not build this. I built it the same morning
-- 🌙 [tri-kumpani](https://github.com/moudrkat/tri-kumpani) — Li Po's *Drinking Alone under the Moon*, read by a small Chinese model twelve hundred years later: tap a token to see which words it raises its cup to, head by head, then pour it wine and watch the next verse fall apart into Chinese characters. The tokenized poem is also printed on a jacket. [▶ open it](https://moudrkat.github.io/tri-kumpani/)
-- 🚪 [resi-doom](https://github.com/moudrkat/resi-doom) — Doom, except the level is a language model mid-sentence: one chamber per layer, attention matrices for windows, the residual stream painted on the walls. `W` and `S`. That is the control scheme. [▶ open it](https://unt1l1f1nd-resi-doom.static.hf.space)
-- 🎸 [unlived](https://github.com/moudrkat/unlived) — a gamebook of the life you never lived: it writes that life as a playable story, and you win by quitting the game to go live it for real
-- 🎉 [promptparty](https://github.com/moudrkat/promptparty) — born mid-hackathon, shipped the same day: a dashboard for friends agent-coding in one room that says when to 🗣️ TALK (all agents cooking) and when to ⌨️ PROMPT (someone's agent is waiting). Claude Code hooks report automatically; `pip install promptparty`
-- 🎨 [personal-rembrandt](https://github.com/moudrkat/personal-rembrandt) — you can't build a personal brand, so build a personal Rembrandt: paste your bio, GPT-2 reads it in your browser, and its activations repaint his 1659 self-portrait.
-- 🛏️ [go-to-damn-bed](https://github.com/moudrkat/go-to-damn-bed) — a Claude Code skill that sends you to bed like a mom sends naughty children: it saves your work into TOMORROW.md, then counts to three. It never says what happens at three
-- 👑 [KingOfDiamonds](https://github.com/moudrkat/KingOfDiamonds) — the King of Diamonds game from *Alice in Borderland*, played by LLMs in character, recursive strategic thinking and all
-- 🗨️ [paralel-discordverse](https://github.com/moudrkat/paralel-discordverse) — your company's Discord gets a parallel universe, populated entirely by fictional colleagues
-- 🧅 [underglaze](https://github.com/moudrkat/underglaze) — the blue tile on a kitchen wall, written as a sum of cosines: 62 815 of them for 99 %. Three knobs to drag, and one of them turns the plant into a snowflake. The pattern everyone here calls *cibulák* turns out to have no onion in it
-- 🌧️ [coalescence](https://github.com/moudrkat/coalescence) — a raindrop landing on an already-wet window doesn't splash and doesn't soak in, it stops being a drop and becomes film. The thin-film equation, solved and rendered in your browser: there is no drop in the equation, the drop is only where it starts
-- 🧮 [least-squares-method](https://github.com/moudrkat/least-squares-method) — code archaeology: a printed Pascal listing, photographed page by page and revived on Turbo Pascal 5.5
+- 🌙 [tri-kumpani](https://github.com/moudrkat/tri-kumpani) — Li Po's *Drinking Alone under the Moon*, read by a small Chinese model twelve hundred years later. [▶ open it](https://moudrkat.github.io/tri-kumpani/)
+- 🚪 [resi-doom](https://github.com/moudrkat/resi-doom) — Doom, except the level is a language model mid-sentence. `W` and `S`. That is the control scheme. [▶ open it](https://unt1l1f1nd-resi-doom.static.hf.space)
+- 🎸 [unlived](https://github.com/moudrkat/unlived) — a gamebook of the life you never lived. You win by quitting the game to go live it.
+- 🎉 [promptparty](https://github.com/moudrkat/promptparty) — a dashboard for friends agent-coding in one room: when to 🗣️ TALK and when to ⌨️ PROMPT.
+- 🎨 [personal-rembrandt](https://github.com/moudrkat/personal-rembrandt) — you can't build a personal brand, so build a personal Rembrandt: GPT-2 reads your bio and repaints his self-portrait.
+- 🛏️ [go-to-damn-bed](https://github.com/moudrkat/go-to-damn-bed) — a Claude Code skill that sends you to bed. It counts to three. It never says what happens at three.
+- 👑 [KingOfDiamonds](https://github.com/moudrkat/KingOfDiamonds) — the King of Diamonds game from *Alice in Borderland*, played by LLMs in character.
+- 🗨️ [paralel-discordverse](https://github.com/moudrkat/paralel-discordverse) — your company's Discord gets a parallel universe of fictional colleagues.
+- 🧅 [underglaze](https://github.com/moudrkat/underglaze) — the blue tile on a kitchen wall, as a sum of cosines. The pattern everyone here calls *cibulák* turns out to have no onion in it.
+- 🌧️ [coalescence](https://github.com/moudrkat/coalescence) — a raindrop landing on a wet window: the thin-film equation, solved in your browser.
+- 🧮 [least-squares-method](https://github.com/moudrkat/least-squares-method) — code archaeology: a printed Pascal listing, photographed page by page and revived on Turbo Pascal 5.5.
 </details>
 
 ---
