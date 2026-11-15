@@ -1,37 +1,63 @@
-# Open questions I'd love help with
+# Open questions: what would you use this for?
 
-Things I can't get to, or can't do alone. Each one says where to start and how you'd know you're done.
-Small is fine. A result that says "no, it doesn't" is a result. Open an issue in the repo, or just send the PR.
+I build these things because I want them myself. What I don't know is what *you* would do with them.
+So this page is mostly questions, with my own guesses under each. Try one, and tell me where it broke or what you
+wished it did. An issue is enough. A PR is better.
 
-The idea of keeping such a list is Neel Nanda's ([200 Concrete Open Problems in Mechanistic Interpretability](https://www.alignmentforum.org/s/yivyHaCAmMJ3CqSyj)); the one-command starts and "swap one thing and it's yours" are how Andrej Karpathy and Georgi Gerganov build their repos. I'm copying people who do this well.
+## Looking inside a model: [brainscope](https://github.com/moudrkat/brainscope)
 
-## Five minutes
+```
+pip install brainscope && brainscope --model tiny
+```
 
-| | start | done when |
-|---|---|---|
-| **Talk to the chip model your way** | [esp32-ai](https://github.com/moudrkat/esp32-ai): write 20 requests the way *you* would say them | you've told me which ones it got wrong. My own test sentences are too polite |
-| **Run Maxwell on your computer** | [maxwell-on-a-chip](https://github.com/moudrkat/maxwell-on-a-chip): `host/maxwell 28 demon` | you've found a paragraph funnier than mine. It goes in the README, with your name |
+Then point your app at it instead of your usual endpoint, and watch.
 
-## An evening
+- **What does your model do that you can't explain?** That is the question I most want answered. Tell me what it was,
+  and whether the lens showed you anything.
+- **My guesses at what it is good for:** why an agent picked the wrong tool; whether your system prompt still counts
+  after a long chat; whether a fine-tune changed what you think it changed. Try one of them on your own app.
+- **Train something of your own:** a probe. `POST /probes/train` builds one from two contrasting personas ("Probes" in
+  the README), and [hidden-intent](https://github.com/moudrkat/hidden-intent) is a worked example on a coding model.
 
-| | start | done when |
-|---|---|---|
-| **Put your own dead physicist on a chip** | maxwell-on-a-chip: edit `books.txt`, run `./train.sh` | Darwin, Newton or Lovelace loops when cold and rambles when warm |
-| **The first real thermometer** | maxwell-on-a-chip: an ESP32-S3, an OLED, an SHT40, `./flash.sh` | a photo or a video of the screen. Nobody has run it on hardware yet, me included |
-| **Another display** | maxwell-on-a-chip: the SH1106 path in `firmware/maxwell/display.h` is untested | it works on a 1.3" panel |
-| **A new thing to draw** | esp32-ai: one family in `research/oled/gen.py` (a shape, an animation) | the retrained model draws it and the interpreter check still passes |
-| **Your steering method on SteerBench** | [steering-mechanics/steerbench](https://github.com/moudrkat/steering-mechanics/tree/main/steerbench) | a row in the table, with your method's name on it |
+## A decision model in a phone: [kneejerk](https://github.com/moudrkat/kneejerk), [probascope](https://github.com/moudrkat/probascope), [decide-me](https://github.com/moudrkat/decide-me)
 
-## A real project
+A decision model doesn't write. It picks one of the options you give it, in one forward pass, and that fits in a phone.
 
-| | start | done when |
-|---|---|---|
-| **Is post-training a refrigerator?** | maxwell-on-a-chip: fine-tune the model toward coherent sentences, then repeat `measure.py` | the entropy-against-temperature curve of the tuned model, next to the original. My guess: it shifts right. I have not measured it |
-| **Strength relative to the activation** | [hotwire-vllm](https://github.com/moudrkat/hotwire-vllm): today the vector has a fixed scale; some benchmarks need `alpha × the token's own norm` | it passes `hotwire.verify` and doesn't slow the unsteered path |
-| **A read operation in hotwire** | hotwire-vllm: it writes into the residual stream but cannot read from it | activations of chosen layers come back with the response, CUDA graphs still on |
-| **A probe of your own, live** | [brainscope](https://github.com/moudrkat/brainscope): the "Bring your own" section of its README | your probe shows up in the lens on your app's real traffic |
-| **Does a direction act as a switch on small models?** | on a 4M model that writes programs, adding a direction to the finished model didn't move behaviour gradually: nothing, nothing, then a different program. Is that the model's size, or the task? | the same measurement on one other small model. The code comes with the robot repo, soon |
+- **What would you let a phone decide without asking a server?**
+- **My guesses:** sorting what just arrived, offline; a yes or no before you bother a big model; anything where the
+  data should not leave the device.
+- **Start:** "Try it in five minutes" in kneejerk. probascope is the same thing as an Android app, with a look at
+  where in the layers the answer formed.
+
+## A model on a chip: [esp32-ai](https://github.com/moudrkat/esp32-ai)
+
+A 3M-parameter model on an ESP32-S3 turns your sentence into a small program, and the same chip runs it. No network.
+
+- **What should a chip that costs less than lunch understand without a network?**
+- **My guesses:** a device you can tell what to do instead of learning its three buttons; a toy; a lab instrument that
+  takes a sentence.
+- **Talk to it your way:** write 20 requests the way *you* would say them and tell me which ones it got wrong. My own
+  test sentences are too polite.
+- **Train your own:** the model is trained from scratch on generated pairs of request and program. Add a family of
+  your own in `research/oled/gen.py` and retrain ("Run it yourself" in the README).
+
+## Steering in production: [hotwire-vllm](https://github.com/moudrkat/hotwire-vllm)
+
+hotwire steers a model per request inside vLLM, with CUDA graphs on. **I want it running in somebody's production.**
+
+- **You run vLLM?** `pip install hotwire-vllm`, run "Verify on your hardware" from the README, and send me the numbers.
+- **Something stops you from shipping it?** That is the issue I want most.
+- **Known gaps, if you'd rather build:** a strength relative to the token's own norm, and a read operation next to the
+  write.
+
+## Where did you use a local model?
+
+Not a task. If you run a model locally in something real (a phone, a chip, a laptop that isn't allowed to phone home),
+write me what it does and why it had to be local.
 
 ## If you get stuck
 
 Open an issue and say where. I answer within a day. The first outside PR was merged and released the next morning.
+
+The idea of keeping a list like this is Neel Nanda's
+([200 Concrete Open Problems in Mechanistic Interpretability](https://www.alignmentforum.org/s/yivyHaCAmMJ3CqSyj)).

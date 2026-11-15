@@ -29,8 +29,6 @@ git clone https://github.com/moudrkat/maxwell-on-a-chip && cd maxwell-on-a-chip
 cc -O2 -o host/maxwell host/maxwell.c -lm && host/maxwell 28    # Maxwell and Boltzmann at 28 °C
 ```
 
-**Want to do more than look?** [Open questions I'd love help with](OPEN-QUESTIONS.md).
-
 <br>
 
 <img src="media/bar-chamber.svg" width="100%" height="10" alt="">
@@ -129,9 +127,8 @@ Small models on small devices are the ones you can actually open up: [probascope
 ## 🤝 What I'm looking for
 
 **Collaborators and users.** Build on LLMs and want to see inside your model? `pip install`, try it, and
-open an issue where it breaks. Work on steering or interpretability? Run
-[SteerBench](https://github.com/moudrkat/steering-mechanics/tree/main/steerbench)
-against your own method and tell me what you get.
+open an issue where it breaks. And tell me what you'd use it for: I have guesses, and
+[questions for you](OPEN-QUESTIONS.md).
 
 <br>
 
