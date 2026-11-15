@@ -127,8 +127,9 @@ Small models on small devices are the ones you can actually open up: [probascope
 ## 🤝 What I'm looking for
 
 **Collaborators and users.** Build on LLMs and want to see inside your model? `pip install`, try it, and
-open an issue where it breaks. And tell me what you'd use it for: I have guesses, and
-[questions for you](OPEN-QUESTIONS.md).
+open an issue where it breaks.
+
+**What would you use it for? → [I have guesses, and questions for you](OPEN-QUESTIONS.md)**
 
 <br>
 

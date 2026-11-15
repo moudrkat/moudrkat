@@ -2,7 +2,7 @@
 
 I build these things because I want them myself. What I don't know is what *you* would do with them.
 So this page is mostly questions, with my own guesses under each. Try one, and tell me where it broke or what you
-wished it did. An issue is enough. A PR is better.
+wished it did. An issue in that repo is enough. A PR is better.
 
 ## Looking inside a model: [brainscope](https://github.com/moudrkat/brainscope)
 
@@ -27,7 +27,7 @@ A decision model doesn't write. It picks one of the options you give it, in one 
 - **My guesses:** sorting what just arrived, offline; a yes or no before you bother a big model; anything where the
   data should not leave the device.
 - **Start:** "Try it in five minutes" in kneejerk. probascope is the same thing as an Android app, with a look at
-  where in the layers the answer formed.
+  where in the layers the answer formed. decide-me points one at the camera and tells you what to do next.
 
 ## A model on a chip: [esp32-ai](https://github.com/moudrkat/esp32-ai)
 
@@ -53,7 +53,7 @@ hotwire steers a model per request inside vLLM, with CUDA graphs on. **I want it
 ## Where did you use a local model?
 
 Not a task. If you run a model locally in something real (a phone, a chip, a laptop that isn't allowed to phone home),
-write me what it does and why it had to be local.
+tell me what it does and why it had to be local: [open an issue here](https://github.com/moudrkat/moudrkat/issues/new).
 
 ## If you get stuck
 
