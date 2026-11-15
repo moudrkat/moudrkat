@@ -36,6 +36,6 @@ Heck... I even started on a CPU. 🙂
 
 Now some of it runs in a phone. And on a chip that costs less than lunch.
 
-If this resonates with you, let's connect.
+If this resonates with you, [tell me](https://github.com/moudrkat/tell-me).
 
 Or just take a repo, open a model, and start asking questions.
