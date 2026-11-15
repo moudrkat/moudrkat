@@ -4,13 +4,7 @@ So... why does one person have a pile of open-source repos about poking around i
 
 I'll say it directly.
 
-My goal is **not** to discover the next big mechanistic interpretability breakthrough.
-
-My goal is **not** to get a new job.
-
-My goal is **not** to raise funding.
-
-My goal is actually very straightforward.
+My goal is very straightforward.
 
 I want anyone building an AI application to be able to open their model during
 inference, look inside, inspect what is happening, and experiment with the
