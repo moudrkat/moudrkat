@@ -11,13 +11,13 @@ opaque — first particle collisions, then risk models, now neural networks.
 
 **[Why I'm really doing this → the manifesto](MANIFESTO.md)**
 
-**Two things I do, and where to find them:**
+**Three ways in:**
 
 | you want to | go to |
 |---|---|
 | 🔬 **see inside a model**: watch it think, find out why it did that, fix it | [the interpretability lab](#-an-open-source-interpretability-lab-tested-on-a-real-production-app) |
 | 🔩 **run a model on the device**: in a phone, or on a chip that costs less than lunch | [edge AI](#-shoved-into-the-device-edge-ai) |
-| 🎈 **just play with something** | [the two drawers](#-just-for-fun-two-drawers), or [the collision chamber](#-come-say-hi-in-my-collision-chamber) right below |
+| 🎈 **just play with something**: mostly small models doing odd jobs in a browser tab | [the cabinet of drawers](#-just-for-fun-a-cabinet-of-drawers) |
 
 **Five minutes, no account, no chip:**
 
@@ -137,39 +137,58 @@ against your own method and tell me what you get.
 
 <img src="media/bar-fun.svg" width="100%" height="10" alt="">
 
-## 🎈 Just for fun: two drawers
+## 🎈 Just for fun: a cabinet of drawers
 
-> Smaller things, and things that got out of hand. Open either.
+> Smaller things, and things that got out of hand. Pull any handle.
 
+<table>
+<tr><td>
 <details>
-<summary>🔬 <b>Also on the bench</b> — smaller, self-contained ways to look inside</summary>
+<summary><kbd>&nbsp;━━━&nbsp;</kbd>&nbsp; 🌐 <b>In a browser tab</b> — what a small model can do with no server behind it</summary>
+<br>
 
+- 🌍 [brave-new-world](https://github.com/moudrkat/brave-new-world) — a very small language model, in your browser tab, designs the entire page you are looking at.
+- 💥 [detektor](https://github.com/moudrkat/detektor) — the collision chamber above, open source.
 - 🔦 [tournament-watermarking](https://github.com/moudrkat/tournament-watermarking) — the watermark Anthropic now puts in Claude's output, running live as a decaying newspaper.
+- 🎨 [personal-rembrandt](https://github.com/moudrkat/personal-rembrandt) — you can't build a personal brand, so build a personal Rembrandt: GPT-2 reads your bio and repaints his self-portrait.
+- 🔥 [fouriers-fire](https://github.com/moudrkat/fouriers-fire) — a campfire from the equations up, and a sentence model whose words become the embers.
 - 📜 [paper-remembers](https://github.com/moudrkat/paper-remembers) — Hopfield's 1982 paper, running live: rub out any part of the page and watch it rebuild itself.
+- 🌧️ [coalescence](https://github.com/moudrkat/coalescence) — a raindrop landing on a wet window: the thin-film equation, solved in your browser.
+
+</details>
+</td></tr>
+<tr><td>
+<details>
+<summary><kbd>&nbsp;━━━&nbsp;</kbd>&nbsp; 🔬 <b>Also on the bench</b> — smaller, self-contained ways to look inside</summary>
+<br>
+
 - 🎭 [sixteen-voices](https://github.com/moudrkat/sixteen-voices) — how a tiny transformer encodes writing style.
 - 👁️ [show-me-your-attention](https://github.com/moudrkat/show-me-your-attention) — attention maps and neuron activations over your own prompt.
-- 💥 [detektor](https://github.com/moudrkat/detektor) — the collision chamber above, open source.
 - 🖼️ [jepa-demo](https://github.com/moudrkat/jepa-demo) — I-JEPA & V-JEPA 2 hands-on, no GPU needed.
 - 🍄 [Mushroom-generator](https://github.com/moudrkat/Mushroom-generator) — a VAE growing mushrooms, its decoder taken apart layer by layer.
 - 🍎 [Applepear](https://github.com/moudrkat/Applepear) — apples vs pears in a tiny CNN, grad-CAM included.
 - ⚙️ [Minimize_me](https://github.com/moudrkat/Minimize_me) — race TensorFlow optimizers across loss landscapes.
-</details>
 
+</details>
+</td></tr>
+<tr><td>
 <details>
-<summary>🃏 <b>And off the bench</b></summary>
+<summary><kbd>&nbsp;━━━&nbsp;</kbd>&nbsp; 🃏 <b>And off the bench</b> — everything else that got out of hand</summary>
+<br>
 
 - 🌙 [tri-kumpani](https://github.com/moudrkat/tri-kumpani) — Li Po's *Drinking Alone under the Moon*, read by a small Chinese model twelve hundred years later. [▶ open it](https://moudrkat.github.io/tri-kumpani/)
 - 🚪 [resi-doom](https://github.com/moudrkat/resi-doom) — Doom, except the level is a language model mid-sentence. `W` and `S`. That is the control scheme. [▶ open it](https://unt1l1f1nd-resi-doom.static.hf.space)
 - 🎸 [unlived](https://github.com/moudrkat/unlived) — a gamebook of the life you never lived. You win by quitting the game to go live it.
 - 🎉 [promptparty](https://github.com/moudrkat/promptparty) — a dashboard for friends agent-coding in one room: when to 🗣️ TALK and when to ⌨️ PROMPT.
-- 🎨 [personal-rembrandt](https://github.com/moudrkat/personal-rembrandt) — you can't build a personal brand, so build a personal Rembrandt: GPT-2 reads your bio and repaints his self-portrait.
 - 🛏️ [go-to-damn-bed](https://github.com/moudrkat/go-to-damn-bed) — a Claude Code skill that sends you to bed. It counts to three. It never says what happens at three.
 - 👑 [KingOfDiamonds](https://github.com/moudrkat/KingOfDiamonds) — the King of Diamonds game from *Alice in Borderland*, played by LLMs in character.
 - 🗨️ [paralel-discordverse](https://github.com/moudrkat/paralel-discordverse) — your company's Discord gets a parallel universe of fictional colleagues.
 - 🧅 [underglaze](https://github.com/moudrkat/underglaze) — the blue tile on a kitchen wall, as a sum of cosines. The pattern everyone here calls *cibulák* turns out to have no onion in it.
-- 🌧️ [coalescence](https://github.com/moudrkat/coalescence) — a raindrop landing on a wet window: the thin-film equation, solved in your browser.
 - 🧮 [least-squares-method](https://github.com/moudrkat/least-squares-method) — code archaeology: a printed Pascal listing, photographed page by page and revived on Turbo Pascal 5.5.
+
 </details>
+</td></tr>
+</table>
 
 ---
 
